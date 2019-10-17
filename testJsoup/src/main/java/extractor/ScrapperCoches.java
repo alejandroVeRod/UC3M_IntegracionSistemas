@@ -16,15 +16,16 @@ public class ScrapperCoches {
 
 	
 	public static final int MAX_PAGES=10;
-	public static final String URL="https://www.ocasionplus.com/coches-ocasion";
+	public static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
 	public static void main(String[] args) {
 		
 			
-			String filtro="a[href*=/coches-segunda-mano/]";
+			String filtro="a[href*=/anuncios/]";
 			
 			for(int i=1;i<MAX_PAGES;i++) {
-				String enlace=URL+"?pagina="+i;
+				String enlace=URL+"&page="+i;
+				
 				System.out.println(getHref(enlace,filtro));
 			}
 			
@@ -36,9 +37,10 @@ public class ScrapperCoches {
 		List<String> enlaces=new ArrayList<String>();
 		if(getStatusConnectionCode(URL)==200){
 			Document doc = getHtmlDocument(enlace);
-			Elements lst = doc.select("filtro");
+			Elements lst = doc.select(filtro);
 			for (Element ele : lst) {
-				enlaces.add(ele.absUrl("href"));			}
+				String url= ele.attr("href");
+				enlaces.add(url);			}
 		}else {
 			System.out.println("Error, de conexión");
 		}
