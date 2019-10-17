@@ -9,13 +9,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import EjercicioMedicina.Medicamento;
 
 public class ScrapperCochesNet {
 
 
 	
-	public static final String URL="https://www.coches.net/segunda-mano/";
+	public static final String URL="https://www.ocasionplus.com/coches-ocasion";
 	
 	public static void main(String[] args) {
 		
@@ -25,10 +24,11 @@ public class ScrapperCochesNet {
 
 		try {
 			URL enlace=new URL(URL);
-			System.out.println(RobotRule.robotSafe(enlace));
-			//Recuperamos los enlaces por orden alfabetico
+			//System.out.println("is it safe? "+RobotRule.robotSafe(enlace));
 			Document doc = Jsoup.connect(URL).get();
-			Elements lst = doc.select("div.mt-SerpList-item");
+			System.out.println("Scrapping..."+doc.title());
+			Elements lst = doc.select("div.jsx-2435177345");
+			//System.out.println(doc.select("div.jsx-1873604330car-card").first().text());
 			for (Element ele : lst) {
 				System.out.println(ele.text());
 				//enlacesCoches.add((ele.select("a[href]").toString()); //Recoge los enlaces a los coches.
