@@ -1,4 +1,4 @@
-package cochesNet;
+package extractor;
 
 
 import java.io.IOException;

@@ -1,8 +1,9 @@
-package cochesNet;
+package extractor;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import org.jsoup.Connection.Response;
@@ -13,20 +14,38 @@ import org.jsoup.select.Elements;
 
 public class ScrapperCoches {
 
-
+	
 	public static final int MAX_PAGES=10;
 	public static final String URL="https://www.ocasionplus.com/coches-ocasion";
 	
 	public static void main(String[] args) {
 		
-		List<String> enlacesCoches=new ArrayList<String>();
 			
-			getEnlacesCoches(enlacesCoches);
-
-			System.out.println(enlacesCoches);
+			String filtro="a[href*=/coches-segunda-mano/]";
+			
+			for(int i=1;i<MAX_PAGES;i++) {
+				String enlace=URL+"?pagina="+i;
+				System.out.println(getHref(enlace,filtro));
+			}
+			
 	}
 
 
+	
+	private static List<String> getHref(String enlace,String filtro) {
+		List<String> enlaces=new ArrayList<String>();
+		if(getStatusConnectionCode(URL)==200){
+			Document doc = getHtmlDocument(enlace);
+			Elements lst = doc.select("filtro");
+			for (Element ele : lst) {
+				enlaces.add(ele.absUrl("href"));			}
+		}else {
+			System.out.println("Error, de conexiÃ³n");
+		}
+		return enlaces;
+		
+	}
+	
 
 	private static void getEnlacesCoches(List<String> enlacesCoches) {
 		if(getStatusConnectionCode(URL)==200){
@@ -47,13 +66,13 @@ public class ScrapperCoches {
 		try {
 		    doc = Jsoup.connect(url).userAgent("Mozilla/5.0").timeout(100000).get();
 		    } catch (IOException ex) {
-			System.out.println("Excepción al obtener el HTML de la página" + ex.getMessage());
+			System.out.println("Excepciï¿½n al obtener el HTML de la pï¿½gina" + ex.getMessage());
 		    }
 	    return doc;
 	}
 	
 	/**
-	 * Con esta método compruebo el Status code de la respuesta que recibo al hacer la petición
+	 * Con esta mï¿½todo compruebo el Status code de la respuesta que recibo al hacer la peticiï¿½n
 	 * EJM:
 	 * 		200 OK			300 Multiple Choices
 	 * 		301 Moved Permanently	305 Use Proxy
@@ -68,7 +87,7 @@ public class ScrapperCoches {
 	    try {
 		response = Jsoup.connect(url).userAgent("Mozilla/5.0").timeout(100000).ignoreHttpErrors(true).execute();
 	    } catch (IOException ex) {
-		System.out.println("Excepción al obtener el Status Code: " + ex.getMessage());
+		System.out.println("Excepciï¿½n al obtener el Status Code: " + ex.getMessage());
 	    }
 	    return response.statusCode();
 	}
