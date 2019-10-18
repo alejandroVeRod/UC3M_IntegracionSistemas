@@ -89,16 +89,6 @@ public class ScrapperCoches {
 	}
 	
 
-	private static void getEnlacesCoches(List<String> enlacesCoches) {
-		if(getStatusConnectionCode(URL)==200){
-			Document doc = getHtmlDocument(URL);
-			Elements lst = doc.select("a[href*=/coches-segunda-mano/]");
-			for (Element ele : lst) {
-				enlacesCoches.add(ele.absUrl("href"));
-				//enlacesCoches.add((ele.select("a[href]").toString()); //Recoge los enlaces a los coches.
-			}
-		}
-	}
 	
 
 
