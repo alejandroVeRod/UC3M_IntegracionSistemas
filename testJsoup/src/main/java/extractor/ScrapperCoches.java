@@ -12,15 +12,52 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import logic.Coche;
+
 public class ScrapperCoches {
 
 	
 	public static final int MAX_PAGES=10;
+	private static final String URL_COCHES= "https://www.autoscout24.es";
 	public static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
 	public static void main(String[] args) {
-		getUrls();	//recoge todos los enlaces de los coches existentes en la pagina		
+		//getUrls();	//recoge todos los enlaces de los coches existentes en la pagina
+		getCoches();
 	}	
+	
+	private static List<Coche> getCoches(){
+		List<Coche> coches= new ArrayList<Coche>();
+		
+		List<String> urls= getUrls();
+		
+		String tipo ="";
+		String marca ="";
+		String modelo ="";
+		String anno ="";
+		String combustible ="";
+		
+		for (String enlace : urls) {
+			Document doc = getHtmlDocument(URL_COCHES+enlace);
+			String filtro= "div[data-item-name= car-details]";
+			Elements lst = doc.select(filtro);
+			
+			for (Element elem : lst) {
+				tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
+				marca =elem.getElementsContainingOwnText("Marca").next().text();
+				modelo =elem.getElementsContainingOwnText("Modelo").next().text();
+				anno =elem.getElementsContainingOwnText("Año").next().text();
+				combustible =elem.getElementsContainingOwnText("Combustible").next().text();
+				
+//				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
+			}
+			System.out.println(marca + " , " + modelo+" , " + anno + " , " + tipo);
+		}
+		
+		
+		
+		return coches;
+	}
 	
 	private static List<String> getUrls(){
 		List<String> urls=new ArrayList<String>();
