@@ -12,25 +12,29 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import logic.Coche;
+import modelo.DAOCoches;
+
+//import logic.Coche;
 
 public class ScrapperCoches {
 
 	
-	public static final int MAX_PAGES=10;
+	public static final int MAX_PAGES=2;
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	public static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
 	public static void main(String[] args) {
 		//getUrls();	//recoge todos los enlaces de los coches existentes en la pagina
-		getCoches();
+		List<org.bson.Document> listaCoches=getCoches();
+		
+		for(org.bson.Document doc: listaCoches) {
+			DAOCoches.insert(doc);
+		}
 	}	
 	
-	private static List<Coche> getCoches(){
-		List<Coche> coches= new ArrayList<Coche>();
-		
+	private static List<org.bson.Document> getCoches(){
+		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
 		List<String> urls= getUrls();
-		
 		String tipo ="";
 		String marca ="";
 		String modelo ="";
@@ -41,22 +45,25 @@ public class ScrapperCoches {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			String filtro= "div[data-item-name= car-details]";
 			Elements lst = doc.select(filtro);
-			
+			org.bson.Document coche=new org.bson.Document();
 			for (Element elem : lst) {
-				tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
+				tipo =elem.getElementsContainingOwnText("Tipo de vehÃ­culo").next().text();
 				marca =elem.getElementsContainingOwnText("Marca").next().text();
 				modelo =elem.getElementsContainingOwnText("Modelo").next().text();
-				anno =elem.getElementsContainingOwnText("Año").next().text();
+				anno =elem.getElementsContainingOwnText("AÃ±o").next().text();
 				combustible =elem.getElementsContainingOwnText("Combustible").next().text();
 				
+				coche.append("tipo", tipo);
+				coche.append("marca", marca);
+				coche.append("modelo", modelo);
+				coche.append("ano", anno);
+				coche.append("combustible", combustible);
 //				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
 			}
-			System.out.println(marca + " , " + modelo+" , " + anno + " , " + tipo);
+			listaCoches.add(coche);
 		}
 		
-		
-		
-		return coches;
+		return listaCoches;
 	}
 	
 	private static List<String> getUrls(){
