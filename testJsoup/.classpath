@@ -23,6 +23,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/a0415032/Downloads/jsoup-1.12.1.jar"/>
+	<classpathentry kind="lib" path="D:/Cheila/Escuela/UC3M/Integración de Sistemas Informáticos/jsoup-1.12.1.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

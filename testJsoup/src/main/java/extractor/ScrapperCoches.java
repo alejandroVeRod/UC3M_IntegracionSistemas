@@ -19,19 +19,21 @@ public class ScrapperCoches {
 	public static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
 	public static void main(String[] args) {
+		getUrls();	//recoge todos los enlaces de los coches existentes en la pagina		
+	}	
+	
+	private static List<String> getUrls(){
+		List<String> urls=new ArrayList<String>();
+		String filtro="a[href*=/anuncios/]";
 		
-			
-			String filtro="a[href*=/anuncios/]";
-			
-			for(int i=1;i<MAX_PAGES;i++) {
-				String enlace=URL+"&page="+i;
-				
-				System.out.println(getHref(enlace,filtro));
-			}
-			
+		for(int i=1;i<MAX_PAGES;i++) {
+			String enlace=URL+"&page="+i;
+			List<String> enlaces= getHref(enlace,filtro);
+			urls.addAll(enlaces);			
+		}
+		System.out.println(urls);
+		return urls;		
 	}
-
-
 	
 	private static List<String> getHref(String enlace,String filtro) {
 		List<String> enlaces=new ArrayList<String>();
@@ -40,7 +42,8 @@ public class ScrapperCoches {
 			Elements lst = doc.select(filtro);
 			for (Element ele : lst) {
 				String url= ele.attr("href");
-				enlaces.add(url);			}
+				enlaces.add(url);			
+			}
 		}else {
 			System.out.println("Error, de conexión");
 		}
