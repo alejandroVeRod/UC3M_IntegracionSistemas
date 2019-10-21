@@ -51,7 +51,7 @@ public class ScrapperCoches {
 				
 //				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
 			}
-			System.out.println(marca + " , " + modelo+" , " + anno + " , " + tipo);
+			System.out.println(marca + " , " + modelo+" , " + anno + " , " + tipo+ " , " + combustible);
 		}
 		
 		
