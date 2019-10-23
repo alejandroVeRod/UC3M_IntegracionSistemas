@@ -11,7 +11,5 @@ public class DAOCoches {
 	public static void insert(Document coche) {
 		dbCoches=MongoBroker.get().getCollection("coches");
 		dbCoches.insertOne(coche);
-	
-
 	}
 }
