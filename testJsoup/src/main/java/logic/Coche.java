@@ -13,7 +13,7 @@ public class Coche {
 	private float consumoCombustible;
 	private float emisiones;
 	private TipoCoche tipoCoche;
-	
+
 	public Coche(String urlImagen, String marca, String modelo, float precio, float km, int anno, Object ubicacion,
 			int caballos, String tipoCombustible, float consumoCombustible, float emisiones, TipoCoche tipoCoche) {
 		super();
@@ -30,6 +30,5 @@ public class Coche {
 		this.emisiones = emisiones;
 		this.tipoCoche = tipoCoche;
 	}
-	
-	
+
 }
