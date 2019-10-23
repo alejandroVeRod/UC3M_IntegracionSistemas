@@ -53,24 +53,25 @@ public class ScrapperCoches {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
 
-			Elements htmlDetalles = doc.select(filtroDetalles);
+			Element htmlDetalles = doc.select(filtroDetalles).first();
 			
-			for (Element elem : htmlDetalles) {
-				tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
-				marca =elem.getElementsContainingOwnText("Marca").next().text();
-				modelo =elem.getElementsContainingOwnText("Modelo").next().text();
-				anno =elem.getElementsContainingOwnText("Año").next().text();
-				combustible =elem.getElementsContainingOwnText("Combustible").next().text();
-				
-				coche.append("tipo", tipo);
-				coche.append("marca", marca);
-				coche.append("modelo", modelo);
-				coche.append("ano", anno);
-				coche.append("combustible", combustible);
-//				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
-			}
+
+				tipo =htmlDetalles.getElementsContainingOwnText("Tipo de vehículo").next().text();
+				marca =htmlDetalles.getElementsContainingOwnText("Marca").next().text();
+				modelo =htmlDetalles.getElementsContainingOwnText("Modelo").next().text();
+				anno =htmlDetalles.getElementsContainingOwnText("Año").next().text();
+				combustible =htmlDetalles.getElementsContainingOwnText("Combustible").next().text();
+			
 			precio = doc.select(filtroPrecio).first().text();
 			
+			
+			coche.append("tipo", tipo);
+			coche.append("marca", marca);
+			coche.append("modelo", modelo);
+			coche.append("ano", anno);
+			coche.append("combustible", combustible);
+			coche.append("precio", precio);
+			System.out.println(coche);
 			listaCoches.add(coche);
 		}
 		
