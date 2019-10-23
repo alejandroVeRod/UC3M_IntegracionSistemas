@@ -52,6 +52,7 @@ public class ScrapperCoches {
 		for (String enlace : urls) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
+
 			Elements htmlDetalles = doc.select(filtroDetalles);
 			
 			for (Element elem : htmlDetalles) {
