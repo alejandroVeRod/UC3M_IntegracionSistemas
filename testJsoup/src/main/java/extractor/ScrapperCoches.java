@@ -47,7 +47,7 @@ public class ScrapperCoches {
 			Elements lst = doc.select(filtro);
 			org.bson.Document coche=new org.bson.Document();
 			for (Element elem : lst) {
-				tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
+				tipo =elem.getElementsContainingOwnText("Tipo de veh\\u00EDculo").next().text();
 				marca =elem.getElementsContainingOwnText("Marca").next().text();
 				modelo =elem.getElementsContainingOwnText("Modelo").next().text();
 				anno =elem.getElementsContainingOwnText("Año").next().text();
