@@ -39,8 +39,7 @@ public class ScrapperCoches {
 	
 	private static List<org.bson.Document> getCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
-		List<String> urls= getUrls();
-		
+		List<String> urls= getUrls();		
 		
 		String tipo ="";
 		String marca ="";
@@ -48,6 +47,7 @@ public class ScrapperCoches {
 		String anno ="";
 		String combustible ="";
 		String precio="";
+		String imagen="";
 		
 		for (String enlace : urls) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
@@ -69,7 +69,11 @@ public class ScrapperCoches {
 //				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
 			
 			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
+			imagen= doc.select("div.gallery-picture img").attr("src");
+			
 			coche.append("precio", precio);
+			coche.append("imagen", imagen);
+			
 			System.out.println(coche);
 			//listaCoches.add(coche);
 		}
