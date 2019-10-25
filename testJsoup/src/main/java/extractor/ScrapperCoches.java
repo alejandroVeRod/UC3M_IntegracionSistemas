@@ -39,8 +39,7 @@ public class ScrapperCoches {
 	
 	private static List<org.bson.Document> getCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
-		List<String> urls= getUrls();
-		
+		List<String> urls= getUrls();		
 		
 		String tipo ="";
 		String marca ="";
@@ -48,31 +47,35 @@ public class ScrapperCoches {
 		String anno ="";
 		String combustible ="";
 		String precio="";
+		String imagen="";
 		
 		for (String enlace : urls) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
 
-			Element htmlDetalles = doc.select(filtroDetalles).first();
-			
-
-				tipo =htmlDetalles.getElementsContainingOwnText("Tipo de vehículo").next().text();
-				marca =htmlDetalles.getElementsContainingOwnText("Marca").next().text();
-				modelo =htmlDetalles.getElementsContainingOwnText("Modelo").next().text();
-				anno =htmlDetalles.getElementsContainingOwnText("Año").next().text();
-				combustible =htmlDetalles.getElementsContainingOwnText("Combustible").next().text();
-			
-			precio = doc.select(filtroPrecio).first().text();
-			
+			Element elem = doc.select(filtroDetalles).first();
+			listaCoches.add(coche);
+			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
+			marca =elem.getElementsContainingOwnText("Marca").next().text();
+			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
+			anno =elem.getElementsContainingOwnText("Año").next().text();
+			combustible =elem.getElementsContainingOwnText("Combustible").next().text();
 			
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
 			coche.append("ano", anno);
 			coche.append("combustible", combustible);
+//				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
+			
+			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
+			imagen= doc.select("div.gallery-picture img").attr("src");
+			
 			coche.append("precio", precio);
+			coche.append("imagen", imagen);
+			
 			System.out.println(coche);
-			listaCoches.add(coche);
+			//listaCoches.add(coche);
 		}
 		
 		return listaCoches;
