@@ -32,9 +32,9 @@ public class ScrapperCoches {
 		//getUrls();	//recoge todos los enlaces de los coches existentes en la pagina
 		List<org.bson.Document> listaCoches=getCoches();
 		
-		for(org.bson.Document doc: listaCoches) {
-			DAOCoches.insert(doc);
-		}
+		//for(org.bson.Document doc: listaCoches) {
+		//	DAOCoches.insert(doc);
+		//}
 	}	
 	
 	private static List<org.bson.Document> getCoches(){
@@ -45,37 +45,44 @@ public class ScrapperCoches {
 		String marca ="";
 		String modelo ="";
 		String anno ="";
-		String combustible ="";
+		String[] combustible;
+		String tipoCombustible ="";
+		String consumo ="";
 		String precio="";
 		String imagen="";
+		String localizacion="";
 		
 		for (String enlace : urls) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
 
 			Element elem = doc.select(filtroDetalles).first();
-			listaCoches.add(coche);
 			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
+			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
+			imagen= doc.select("div.gallery-picture img").attr("src");
+			localizacion=doc.select("div.cldt-stage-vendor-text.sc-font-s").first().text().split(",")[0];
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
 			anno =elem.getElementsContainingOwnText("Año").next().text();
-			combustible =elem.getElementsContainingOwnText("Combustible").next().text();
-			
+			combustible =elem.getElementsContainingOwnText("Combustible").next().text().split(" ");
+			tipoCombustible=combustible[0];
+			//provisional
+			if(combustible.length>1)
+				consumo =combustible[1];
+			else
+				consumo="";
+
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
 			coche.append("ano", anno);
-			coche.append("combustible", combustible);
-//				Coche coche= new Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, caballos, combustible, consumoCombustible, emisiones, tipoCoche);
-			
-			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
-			imagen= doc.select("div.gallery-picture img").attr("src");
-			
+			coche.append("tipoCombustible", tipoCombustible);
+			coche.append("consumo", consumo);
 			coche.append("precio", precio);
 			coche.append("imagen", imagen);
-			
+			coche.append("localizacion", localizacion);
 			System.out.println(coche);
-			//listaCoches.add(coche);
+			listaCoches.add(coche);
 		}
 		
 		return listaCoches;
