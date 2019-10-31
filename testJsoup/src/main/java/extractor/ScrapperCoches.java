@@ -14,6 +14,7 @@ import org.jsoup.select.Elements;
 
 import modelo.DAOCoches;
 
+
 //import logic.Coche;
 
 public class ScrapperCoches {
@@ -23,39 +24,40 @@ public class ScrapperCoches {
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	private static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
-	
 	private static final String filtroDetalles= "div[data-item-name= car-details]";
 	private static final String filtroPrecio="div.cldt-price";
 	
 	
-	public static void main(String[] args) {
-		//getUrls();	//recoge todos los enlaces de los coches existentes en la pagina
-		List<org.bson.Document> listaCoches=getCoches();
-		
-		//for(org.bson.Document doc: listaCoches) {
-		//	DAOCoches.insert(doc);
-		//}
-	}	
+	private List<String> enlaces;
+	private List<org.bson.Document> coches;
 	
-	private static List<org.bson.Document> getCoches(){
+	public static void main(String[] args) {
+		ScrapperCoches sc=new ScrapperCoches();
+		sc.guardarCoches();
+	}
+	
+	
+	public ScrapperCoches() {
+		this.enlaces=getUrls();
+		this.coches=getCoches();
+	}
+	
+	public List<org.bson.Document> getCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
-		List<String> urls= getUrls();		
 		
 		String tipo ="";
 		String marca ="";
 		String modelo ="";
 		String anno ="";
-		String[] combustible;
 		String tipoCombustible ="";
 		String consumo ="";
 		String precio="";
 		String imagen="";
 		String localizacion="";
-		
-		for (String enlace : urls) {
+
+		for (String enlace : enlaces) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
-
 			Element elem = doc.select(filtroDetalles).first();
 			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
 			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
@@ -64,14 +66,14 @@ public class ScrapperCoches {
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
 			anno =elem.getElementsContainingOwnText("Año").next().text();
-			combustible =elem.getElementsContainingOwnText("Combustible").next().text().split(" ");
-			tipoCombustible=combustible[0];
-			//provisional
-			if(combustible.length>1)
-				consumo =combustible[1];
-			else
-				consumo="";
 
+			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
+			consumo=elem.getElementsContainingOwnText("Consumo de combustible:").next().text();
+			if(consumo.length()>1) {
+				consumo=consumo.split(" ")[0];
+			}
+
+			coche.append("enlace", enlace);
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
@@ -88,16 +90,21 @@ public class ScrapperCoches {
 		return listaCoches;
 	}
 	
-	private static List<String> getUrls(){
+	public void guardarCoches() {
+		
+		for(org.bson.Document coche : coches)
+			DAOCoches.insert(coche);
+	}
+	
+	private List<String> getUrls(){
 		List<String> urls=new ArrayList<String>();
 		String filtro="a[href*=/anuncios/]";
 		
-		for(int i=1;i<MAX_PAGES;i++) {
+		for(int i=1;i<=MAX_PAGES;i++) {
 			String enlace=URL+"&page="+i;
 			List<String> enlaces= getHref(enlace,filtro);
 			urls.addAll(enlaces);			
 		}
-		System.out.println(urls);
 		return urls;		
 	}
 	
@@ -151,6 +158,10 @@ public class ScrapperCoches {
 		System.out.println("Excepciï¿½n al obtener el Status Code: " + ex.getMessage());
 	    }
 	    return response.statusCode();
+	}
+
+	public void setCoches(List<org.bson.Document> coches) {
+		this.coches = coches;
 	}
 	
 
