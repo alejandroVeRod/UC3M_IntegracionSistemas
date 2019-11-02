@@ -20,7 +20,7 @@ import modelo.DAOCoches;
 public class ScrapperCoches {
 
 	
-	private static final int MAX_PAGES=2;
+	private static final int MAX_PAGES=10;
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	private static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
@@ -32,8 +32,13 @@ public class ScrapperCoches {
 	private List<org.bson.Document> coches;
 	
 	public static void main(String[] args) {
-		ScrapperCoches sc=new ScrapperCoches();
-		sc.guardarCoches();
+//		ScrapperCoches sc=new ScrapperCoches();
+//		sc.guardarCoches();
+		List<org.bson.Document> coches=DAOCoches.selectRange(2000, 5000);
+		
+		for(org.bson.Document coche : coches)
+		System.out.println(coche.get("precio"));
+
 	}
 	
 	
@@ -48,29 +53,32 @@ public class ScrapperCoches {
 		String tipo ="";
 		String marca ="";
 		String modelo ="";
-		String anno ="";
+		int anno =0;
 		String tipoCombustible ="";
-		String consumo ="";
-		String precio="";
+		float consumo =0;
+		float precio=0;
 		String imagen="";
 		String localizacion="";
+		String categoria="";
 
 		for (String enlace : enlaces) {
 			Document doc = getHtmlDocument(URL_COCHES+enlace);
 			org.bson.Document coche=new org.bson.Document();
 			Element elem = doc.select(filtroDetalles).first();
+			
 			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
-			precio = doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", "");
+			precio =Float.valueOf(doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", ""));
 			imagen= doc.select("div.gallery-picture img").attr("src");
 			localizacion=doc.select("div.cldt-stage-vendor-text.sc-font-s").first().text().split(",")[0];
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
-			anno =elem.getElementsContainingOwnText("Año").next().text();
+			anno =Integer.parseInt(elem.getElementsContainingOwnText("Año").next().text());
+			categoria=elem.getElementsContainingOwnText("Categoría").next().text();
 
 			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
-			consumo=elem.getElementsContainingOwnText("Consumo de combustible:").next().text();
-			if(consumo.length()>1) {
-				consumo=consumo.split(" ")[0];
+			String c=elem.getElementsContainingOwnText("Consumo de combustible:").next().text().split(" ")[0];
+			if(c.length()>1) {
+				consumo=Float.valueOf(c.replace(",", "."));
 			}
 
 			coche.append("enlace", enlace);
@@ -78,11 +86,13 @@ public class ScrapperCoches {
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
 			coche.append("ano", anno);
+			coche.append("categoria", categoria);
 			coche.append("tipoCombustible", tipoCombustible);
 			coche.append("consumo", consumo);
 			coche.append("precio", precio);
 			coche.append("imagen", imagen);
 			coche.append("localizacion", localizacion);
+			
 			System.out.println(coche);
 			listaCoches.add(coche);
 		}
