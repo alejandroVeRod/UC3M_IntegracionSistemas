@@ -17,9 +17,8 @@ import modelo.DAOCoches;
 //import logic.Coche;
 
 public class ScrapperCoches {
-
 	
-	private static final int MAX_PAGES=2;
+	private static final int MAX_PAGES=30;
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	private static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
 	
@@ -74,8 +73,8 @@ public class ScrapperCoches {
 			coche.append("precio", precio);
 			coche.append("imagen", imagen);
 			
-			System.out.println(coche);
-			//listaCoches.add(coche);
+			//System.out.println(coche);
+			listaCoches.add(coche);
 		}
 		
 		return listaCoches;
@@ -104,15 +103,11 @@ public class ScrapperCoches {
 				enlaces.add(url);			
 			}
 		}else {
-			System.out.println("Error, de conexiÃ³n");
+			System.out.println("Error, de conexión");
 		}
 		return enlaces;
 		
 	}
-	
-
-	
-
 
 	public static Document getHtmlDocument(String url) {
 
