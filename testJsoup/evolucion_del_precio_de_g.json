@@ -1,0 +1,2910 @@
+{
+    "Id": "fd45ec01-1583-4463-8617-bb81bfa90fad",
+    "Url": "www.epdata.es/evolucion-precio-gasoleo-espana/fd45ec01-1583-4463-8617-bb81bfa90fad",
+    "Titulo": "Evolución del precio de gasóleo en España",
+    "Subtitulo": "",
+    "Datos": {
+        "Metricas": [
+            {
+                "Id": 0,
+                "Nombre": "Precio del combustible a nivel semanal - Euros / litro de gasolina para gasóleo a como tipo de carburante y España como país",
+                "SonDatosNumericos": true,
+                "Fuente": "Boletín Petrolero de la Unión Europea",
+                "Clasificacion": null,
+                "Unidad": "Euros / litro de gasolina",
+                "Escala": "Unidades",
+                "EscalaFactorPotencia10": 0,
+                "Datos": [
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.37838,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.37407,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.3618,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.39514,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.4201,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.42283,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.44499,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.44122,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.43211,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.41195,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.41501,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.41838,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.42832,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.40375,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.38576,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.36684,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.35071,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.34552,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.35054,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.35475,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.34587,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2012,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.34134,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.36295,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.37715,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.36696,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.37506,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.37831,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.38904,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.41011,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.41458,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.39771,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.377,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.37045,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.36261,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 1.37442,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 1.34226,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 17",
+                        "Parametro": "Semana 17",
+                        "Valor": 1.31128,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.3089,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.30476,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.32384,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.32951,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.34868,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.34269,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.32921,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.32648,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.33391,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.33265,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.33919,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.36418,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.37299,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.3763,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.36406,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.35949,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.36081,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.37063,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.38201,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.40132,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.3974,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.38042,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.36146,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.35935,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.36065,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.36171,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.34727,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.33856,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.33592,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.33654,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.34376,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.35688,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.36061,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2013,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.34682,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.35756,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.34256,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.33522,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.33931,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.33581,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.3357,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.33844,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.34008,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.34201,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.33526,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.32339,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.31489,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 14",
+                        "Parametro": "Semana 14",
+                        "Valor": 1.3198,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 1.31912,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 1.32032,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.32881,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.32682,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.31493,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.32193,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.32562,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.32692,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.3161,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.32018,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.34075,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.34699,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.33788,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.3279,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.32093,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.31872,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.31568,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.32455,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.32624,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.31909,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.32461,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.32761,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.32662,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.31867,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.31281,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.31312,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.29832,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.27406,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.25962,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.26424,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.2658,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.26267,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.24119,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.22873,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.19521,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2014,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.1624,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.10208,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.07952,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.05688,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.05948,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.07198,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.10819,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.14062,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.16226,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.17136,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.1782,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.17885,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.15982,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 14",
+                        "Parametro": "Semana 14",
+                        "Valor": 1.15604,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 1.15289,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 17",
+                        "Parametro": "Semana 17",
+                        "Valor": 1.17989,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.19677,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.20076,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.20452,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.20256,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.20361,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.20073,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.19456,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.18598,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.18239,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.17722,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.17778,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.15761,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.14532,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.13787,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.1198,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.10581,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.09632,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.08698,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.05398,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.08102,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.08544,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.07239,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.07104,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.07034,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.07748,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.06295,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.05095,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.05299,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.06748,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.06571,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.05133,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.05355,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.0392,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2015,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.00597,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 1",
+                        "Parametro": "2016",
+                        "Valor": 0.96251,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 0.95779,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 0.93365,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 0.90948,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 0.91814,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 0.93003,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 0.91983,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 0.92861,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 0.92962,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 0.94636,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 0.97118,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 0.97767,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 14",
+                        "Parametro": "Semana 14",
+                        "Valor": 0.97615,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 0.95372,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 0.97094,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 17",
+                        "Parametro": "Semana 17",
+                        "Valor": 0.98623,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.00422,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.00568,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.00799,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.0321,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.04821,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.05546,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.05675,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.05234,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.0478,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.05043,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.04163,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.0305,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.02662,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.01479,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 0.99632,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.00354,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.02367,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.03745,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.03475,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.02766,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.02865,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.02816,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.03297,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.05309,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.06738,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.07349,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.07512,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.06148,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.04164,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.04124,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.05945,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.06999,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.08981,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2016,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.1057,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 1",
+                        "Parametro": "2017",
+                        "Valor": 1.12756,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.13688,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.12907,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.12373,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.12278,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.12456,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.12752,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.13111,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.13376,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.132,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.12505,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.1058,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.09644,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 14",
+                        "Parametro": "Semana 14",
+                        "Valor": 1.09437,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 1.10857,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 17",
+                        "Parametro": "Semana 17",
+                        "Valor": 1.12552,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.10945,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.09327,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.07974,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.08244,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.08767,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.07935,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.06065,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.05007,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.04145,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.03907,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.04874,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.04821,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.0544,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.061,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.07229,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.07315,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.07055,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.06713,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.07236,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.08445,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.08951,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.09492,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.10702,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.10893,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.10424,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.10969,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.11001,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.1209,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.13464,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.13689,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.13536,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.13513,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.13358,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2017,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.13764,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 1",
+                        "Parametro": "2018",
+                        "Valor": 1.14615,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.15564,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.16362,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.16575,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.16353,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.16279,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.15363,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.1325,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.12988,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.13684,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.13107,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.12976,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.14038,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 1.1552,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 1.16414,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 17",
+                        "Parametro": "Semana 17",
+                        "Valor": 1.17326,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.18338,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.19079,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.20713,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.22782,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.24083,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.24256,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.23796,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.23237,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.22311,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.22172,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.2291,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.22925,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.22144,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.22178,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.22621,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.22661,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.22854,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.23038,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.23876,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.24642,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.24753,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.24479,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.25024,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.27148,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.28492,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.27565,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.27655,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 45",
+                        "Parametro": "Semana 45",
+                        "Valor": 1.27483,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 46",
+                        "Parametro": "Semana 46",
+                        "Valor": 1.2631,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 47",
+                        "Parametro": "Semana 47",
+                        "Valor": 1.24738,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 48",
+                        "Parametro": "Semana 48",
+                        "Valor": 1.22569,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 49",
+                        "Parametro": "Semana 49",
+                        "Valor": 1.19564,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 50",
+                        "Parametro": "Semana 50",
+                        "Valor": 1.17662,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2018,
+                        "Periodo": "Semana 51",
+                        "Parametro": "Semana 51",
+                        "Valor": 1.16362,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 2",
+                        "Parametro": "Semana 2",
+                        "Valor": 1.12984,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 3",
+                        "Parametro": "Semana 3",
+                        "Valor": 1.14832,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 4",
+                        "Parametro": "Semana 4",
+                        "Valor": 1.1663,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 5",
+                        "Parametro": "Semana 5",
+                        "Valor": 1.17768,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 6",
+                        "Parametro": "Semana 6",
+                        "Valor": 1.18495,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 7",
+                        "Parametro": "Semana 7",
+                        "Valor": 1.19086,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 8",
+                        "Parametro": "Semana 8",
+                        "Valor": 1.20036,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 9",
+                        "Parametro": "Semana 9",
+                        "Valor": 1.21989,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 10",
+                        "Parametro": "Semana 10",
+                        "Valor": 1.22546,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 11",
+                        "Parametro": "Semana 11",
+                        "Valor": 1.22887,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 12",
+                        "Parametro": "Semana 12",
+                        "Valor": 1.2301,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 13",
+                        "Parametro": "Semana 13",
+                        "Valor": 1.22848,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 14",
+                        "Parametro": "Semana 14",
+                        "Valor": 1.22841,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 15",
+                        "Parametro": "Semana 15",
+                        "Valor": 1.23249,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 16",
+                        "Parametro": "Semana 16",
+                        "Valor": 1.24222,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 18",
+                        "Parametro": "Semana 18",
+                        "Valor": 1.25737,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 19",
+                        "Parametro": "Semana 19",
+                        "Valor": 1.25808,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 20",
+                        "Parametro": "Semana 20",
+                        "Valor": 1.25794,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 21",
+                        "Parametro": "Semana 21",
+                        "Valor": 1.25911,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 22",
+                        "Parametro": "Semana 22",
+                        "Valor": 1.26094,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 23",
+                        "Parametro": "Semana 23",
+                        "Valor": 1.24711,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 24",
+                        "Parametro": "Semana 24",
+                        "Valor": 1.21912,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 25",
+                        "Parametro": "Semana 25",
+                        "Valor": 1.1992,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 26",
+                        "Parametro": "Semana 26",
+                        "Valor": 1.19423,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 27",
+                        "Parametro": "Semana 27",
+                        "Valor": 1.20147,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 28",
+                        "Parametro": "Semana 28",
+                        "Valor": 1.20521,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 29",
+                        "Parametro": "Semana 29",
+                        "Valor": 1.21054,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 30",
+                        "Parametro": "Semana 30",
+                        "Valor": 1.213,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 31",
+                        "Parametro": "Semana 31",
+                        "Valor": 1.212,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 32",
+                        "Parametro": "Semana 32",
+                        "Valor": 1.217,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 33",
+                        "Parametro": "Semana 33",
+                        "Valor": 1.208,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 34",
+                        "Parametro": "Semana 34",
+                        "Valor": 1.2,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 35",
+                        "Parametro": "Semana 35",
+                        "Valor": 1.198,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 36",
+                        "Parametro": "Semana 36",
+                        "Valor": 1.2,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 37",
+                        "Parametro": "Semana 37",
+                        "Valor": 1.209,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 38",
+                        "Parametro": "Semana 38",
+                        "Valor": 1.226,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 39",
+                        "Parametro": "Semana 39",
+                        "Valor": 1.229,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 40",
+                        "Parametro": "Semana 40",
+                        "Valor": 1.221,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 41",
+                        "Parametro": "Semana 41",
+                        "Valor": 1.213,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 42",
+                        "Parametro": "Semana 42",
+                        "Valor": 1.211,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 43",
+                        "Parametro": "Semana 43",
+                        "Valor": 1.214,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    },
+                    {
+                        "Agno": 2019,
+                        "Periodo": "Semana 44",
+                        "Parametro": "Semana 44",
+                        "Valor": 1.215,
+                        "Estado": "Definitivo",
+                        "Notas": ""
+                    }
+                ]
+            }
+        ]
+    }
+}
