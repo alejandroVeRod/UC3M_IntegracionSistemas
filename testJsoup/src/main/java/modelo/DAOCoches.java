@@ -27,6 +27,10 @@ public class DAOCoches {
 		dbCoches=MongoBroker.getCollection(coleccionCoches);
 		dbCoches.insertOne(coche);
 	}
+	public static void insertList(List<Document>coches) {
+		dbCoches=MongoBroker.getCollection(coleccionCoches);
+		dbCoches.insertMany(coches);
+	}
 	
 	public static List<Document> selectRange(float minPrecio,float maxPrecio) {
 		//genera un filtro para la busqueda por precio

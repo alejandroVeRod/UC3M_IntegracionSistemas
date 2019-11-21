@@ -19,11 +19,10 @@ import modelo.DAOCoches;
 
 public class ScrapperCoches {
 
-	private static final int MAX_PAGES=30;
+	private static final int MAX_PAGES=10;
 	
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	private static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
-	
 	private static final String filtroDetalles= "div[data-item-name= car-details]";
 	private static final String filtroPrecio="div.cldt-price";
 	
@@ -31,23 +30,16 @@ public class ScrapperCoches {
 	private List<String> enlaces;
 	private List<org.bson.Document> coches;
 	
-	public static void main(String[] args) {
-//		ScrapperCoches sc=new ScrapperCoches();
-//		sc.guardarCoches();
-		List<org.bson.Document> coches=DAOCoches.selectRange(2000, 5000);
-		
-		for(org.bson.Document coche : coches)
-		System.out.println(coche.get("precio"));
-
-	}
-	
 	
 	public ScrapperCoches() {
 		this.enlaces=getUrls();
-		this.coches=getCoches();
+		this.coches=getListaCoches();
+	}
+	public List<org.bson.Document> getCoches(){
+		return this.coches;
 	}
 	
-	public List<org.bson.Document> getCoches(){
+	public  List<org.bson.Document> getListaCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
 		
 		String tipo ="";
@@ -81,7 +73,12 @@ public class ScrapperCoches {
 				consumo=Float.valueOf(c.replace(",", "."));
 			}
 
+<<<<<<< HEAD
 			coche.append("enlace", URL_COCHES+enlace);
+=======
+			
+			coche.append("enlace", "https://www.autoscout24.es"+enlace);
+>>>>>>> branch 'devEtiquetado' of https://github.com/alejandroVeRod/UC3M_IntegracionSistemas
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
@@ -92,10 +89,16 @@ public class ScrapperCoches {
 			coche.append("precio", precio);
 			coche.append("imagen", imagen);
 			coche.append("localizacion", localizacion);
+<<<<<<< HEAD
 
 			//System.out.println(coche);
 			listaCoches.add(coche);
 			System.out.println(coche);
+=======
+			WrapperCoches.asignarDistintivo(coche);
+			listaCoches.add(coche);
+			System.out.println("Coche scrapeado "+marca+" "+modelo+" "+anno);
+>>>>>>> branch 'devEtiquetado' of https://github.com/alejandroVeRod/UC3M_IntegracionSistemas
 		}
 		
 		return listaCoches;
