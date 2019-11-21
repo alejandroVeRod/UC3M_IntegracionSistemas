@@ -96,7 +96,6 @@ public class ScrapperCoches {
 			//System.out.println(coche);
 			listaCoches.add(coche);
 			System.out.println(coche);
-			listaCoches.add(coche);
 		}
 		
 		return listaCoches;
