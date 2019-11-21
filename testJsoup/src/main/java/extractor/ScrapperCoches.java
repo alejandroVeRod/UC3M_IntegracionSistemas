@@ -47,7 +47,7 @@ public class ScrapperCoches {
 		String modelo ="";
 		int anno =0;
 		String tipoCombustible ="";
-		float consumo =0;
+		String consumo ="";
 		float precio=0;
 		String imagen="";
 		String localizacion="";
@@ -70,15 +70,11 @@ public class ScrapperCoches {
 			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
 			String c=elem.getElementsContainingOwnText("Consumo de combustible:").next().text().split(" ")[0];
 			if(c.length()>1) {
-				consumo=Float.valueOf(c.replace(",", "."));
+				consumo= c.replace(",", ".");
 			}
 
-<<<<<<< HEAD
+
 			coche.append("enlace", URL_COCHES+enlace);
-=======
-			
-			coche.append("enlace", "https://www.autoscout24.es"+enlace);
->>>>>>> branch 'devEtiquetado' of https://github.com/alejandroVeRod/UC3M_IntegracionSistemas
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
@@ -89,16 +85,12 @@ public class ScrapperCoches {
 			coche.append("precio", precio);
 			coche.append("imagen", imagen);
 			coche.append("localizacion", localizacion);
-<<<<<<< HEAD
 
-			//System.out.println(coche);
-			listaCoches.add(coche);
 			System.out.println(coche);
-=======
+
 			WrapperCoches.asignarDistintivo(coche);
 			listaCoches.add(coche);
 			System.out.println("Coche scrapeado "+marca+" "+modelo+" "+anno);
->>>>>>> branch 'devEtiquetado' of https://github.com/alejandroVeRod/UC3M_IntegracionSistemas
 		}
 		
 		return listaCoches;
