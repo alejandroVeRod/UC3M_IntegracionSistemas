@@ -6,6 +6,7 @@ import java.util.List;
 import org.bson.Document;
 
 import modelo.DAOCoches;
+import valoraciones.Utils;
 
 public class WrapperCoches {
 
@@ -14,20 +15,20 @@ public class WrapperCoches {
 		ScrapperDistintivos sDistintivos=new ScrapperDistintivos();
 		listaDistintivos=sDistintivos.getInfoDistintivos();
 		ScrapperCoches sCoches=new ScrapperCoches();
-		sCoches.guardarCoches();
+		//sCoches.guardarCoches();
 	}
 	public static void asignarDistintivo(org.bson.Document coche) {
 		for(org.bson.Document docDistintivo: listaDistintivos) {
 			if((coche.containsValue("Gasolina")||coche.containsValue("Super 95") ) && docDistintivo.containsKey("inicioPeriodoGasolina")){
 				if(coche.getInteger("ano") >= Integer.parseInt((String) docDistintivo.get("inicioPeriodoGasolina"))) {
 					
-					coche.append("Distintivo",docDistintivo.get("distintivo"));
+					coche.append("distintivo",docDistintivo.get("distintivo"));
 					//System.out.println(coche);
 				}
 			}else if(coche.containsValue("Diésel") && docDistintivo.containsKey("inicioPeriodoDiesel")) {
 				if(coche.getInteger("ano")>=Integer.parseInt((String)docDistintivo.get("inicioPeriodoDiesel"))) {
 					
-					coche.append("Distintivo", docDistintivo.get("distintivo"));
+					coche.append("distintivo", docDistintivo.get("distintivo"));
 					//System.out.println(coche);
 				}
 			
@@ -52,13 +53,19 @@ public class WrapperCoches {
 				}
 
 				if(docDistintivo.get("tiposCombustible").toString().contains((CharSequence) coche.get("tipoCombustible"))) {
-					coche.append("Distintivo", docDistintivo.get("distintivo"));
+					coche.append("distintivo", docDistintivo.get("distintivo"));
 				}
 					
 	
+			}else {
+				coche.append("distintivo","");
 			}
 			}
-			
-	
+	}
+	public static void evaluarCoche(org.bson.Document coche) {
+		
+		float evaluacionCoche=Utils.setValorCoche(coche.getString("distintivo"), coche.getInteger("ano"), coche.getString("kilometraje"));
+		System.out.println("Nota de coche"+evaluacionCoche);
+		coche.append("nota", evaluacionCoche);
 	}
 }

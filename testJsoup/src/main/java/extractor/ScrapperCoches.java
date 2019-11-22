@@ -13,6 +13,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import modelo.DAOCoches;
+import valoraciones.Utils;
 
 
 //import logic.Coche;
@@ -42,6 +43,8 @@ public class ScrapperCoches {
 	public  List<org.bson.Document> getListaCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
 		
+		String kilometraje="";
+		String caballosVapor="";
 		String tipo ="";
 		String marca ="";
 		String modelo ="";
@@ -60,25 +63,30 @@ public class ScrapperCoches {
 			
 			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
 			precio =Float.valueOf(doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", ""));
+			kilometraje=doc.select("span.sc-font-l.cldt-stage-primary-keyfact").first().text().split(" ")[0].replace(".", "");
+			caballosVapor=doc.select("span.sc-font-m.cldt-stage-primary-keyfact").first().text().split(" ")[0];
 			imagen= doc.select("div.gallery-picture img").attr("src");
 			localizacion=doc.select("div.cldt-stage-vendor-text.sc-font-s").first().text().split(",")[0];
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
 			anno =Integer.parseInt(elem.getElementsContainingOwnText("Año").next().text());
 			categoria=elem.getElementsContainingOwnText("Categoría").next().text();
-
+			
 			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
 			String c=elem.getElementsContainingOwnText("Consumo de combustible:").next().text().split(" ")[0];
 			if(c.length()>1) {
 				consumo= c.replace(",", ".");
 			}
-
+			if(kilometraje.equals("-"))
+				continue;
 
 			coche.append("enlace", URL_COCHES+enlace);
 
 			coche.append("tipo", tipo);
 			coche.append("marca", marca);
 			coche.append("modelo", modelo);
+			coche.append("kilometraje", kilometraje);
+			coche.append("caballosVapor", caballosVapor);
 			coche.append("ano", anno);
 			coche.append("categoria", categoria);
 			coche.append("tipoCombustible", tipoCombustible);
@@ -87,11 +95,14 @@ public class ScrapperCoches {
 			coche.append("imagen", imagen);
 			coche.append("localizacion", localizacion);
 
-			System.out.println(coche);
+			System.out.println("Coche scrapeado "+marca+" "+modelo+" "+anno);
 
 			WrapperCoches.asignarDistintivo(coche);
+			WrapperCoches.evaluarCoche(coche);
+			
+			
+			System.out.println(coche);
 			listaCoches.add(coche);
-			System.out.println("Coche scrapeado "+marca+" "+modelo+" "+anno);
 		}
 		
 		return listaCoches;

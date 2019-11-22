@@ -5,11 +5,11 @@ public class Utils {
 	/**
 	 * Método que da un valor al coche en el momento de la inserción sobre un máximo de 5
 	 **/
-	public static float setValorCoche (String distintivo, String annoMatricula, String kilometraje) {
+	public static float setValorCoche (String distintivo, int ano, String kilometraje) {
 		
 		float valoracion = 0;
 		
-		int annoMatriculacion = Integer.parseInt(annoMatricula);	
+		int annoMatriculacion =(Integer) ano;	
 		int numeroKm = Integer.parseInt(kilometraje);
 		
 		if (annoMatriculacion <= 1990) {
@@ -34,26 +34,29 @@ public class Utils {
 			valoracion += 2;
 		} else if (numeroKm >= 200) {
 			valoracion += 1;
-		} 
-		
-		switch (distintivo) {
-		case "B":
-			valoracion += 2;
-			break;
-		case "C":
-			valoracion += 3;
-			break;
-		case "ECO":
-			valoracion += 4;
-			break;
-		case "0":
-			valoracion += 5;
-			break;
-		default:
-			valoracion += 1;
-			break;
 		}
-
+		
+		//if(distintivo!=null) {
+			
+			switch (distintivo) {
+			case "B":
+				valoracion += 2;
+				break;
+			case "C":
+				valoracion += 3;
+				break;
+			case "ECO":
+				valoracion += 4;
+				break;
+			case "0":
+				valoracion += 5;
+				break;
+			default:
+				valoracion += 1;
+				break;
+			}
+			System.out.println("valoracion distintivo"+distintivo+" "+valoracion);
+		//}
 		return valoracion/3;
 	}
 	
