@@ -23,41 +23,26 @@ import java.util.Map.Entry;
 import modelo.DAOCombustible;
 
 public class ScrapperCombustible {
-	
+
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) throws FileNotFoundException {
-		/*
-		 * List<org.bson.Document> listaCoches = getCoches();
-		 * 
-		 * for (org.bson.Document doc : listaCoches) { DAOCoches.insert(doc); }
-		 */
-		
-		//PRECIO COMBUSTIBLE GASOLINA
+
+		// PRECIO COMBUSTIBLE GASOLINA
 		ArrayList<String> preciosGasolina = new ArrayList<String>();
 		JsonParser parserGasolina = new JsonParser();
 		FileReader frGasolina = new FileReader("evolucion_del_precio_de_l.json");
 		JsonElement datosGasolina = parserGasolina.parse(frGasolina);
 		dumpJSONElement(datosGasolina, preciosGasolina);
-		
-		//PRECIO COMBUSTIBLE DIESEL
+
+		// PRECIO COMBUSTIBLE DIESEL
 		ArrayList<String> preciosDiesel = new ArrayList<String>();
 		JsonParser parserDiesel = new JsonParser();
 		FileReader frDiesel = new FileReader("evolucion_del_precio_de_g.json");
 		JsonElement datosDiesel = parserDiesel.parse(frDiesel);
 		dumpJSONElement(datosDiesel, preciosDiesel);
-		
-		//IMPRIMIR ARRAYS DE COMBUSTIBLE Y ALMACENAR DATOS EN MONGODB
-		System.out.println("---PRECIOS GASOLINA---");
-		for (String gasolina : preciosGasolina) {
-			System.out.println(gasolina);
-			//DAOCombustible.insert(gasolina);
-		}
-		
-		System.out.println("---PRECIOS DIESEL---");
-		for (String diesel : preciosDiesel) {
-			System.out.println(diesel);
-			//DAOCombustible.insert(diesel);
-		}
+
+		// INSERTAR EN LA BASE DE DATOS
+		insertarDocumentos(preciosGasolina, preciosDiesel);
 	}
 
 	public static void dumpJSONElement(JsonElement elemento, ArrayList<String> precios) {
@@ -83,48 +68,27 @@ public class ScrapperCombustible {
 			if (valor.isNumber() && (valor.getAsDouble() > 0 && valor.getAsDouble() <= 2)) {
 				try {
 					precios.add(valor.getAsString());
-				}
-				catch (Exception e) {
+				} catch (Exception e) {
 					System.out.println("Error: " + e.toString());
 				}
 			}
 		} else {
-			
+
 		}
 	}
 
-	/*
-	 * private static List<org.bson.Document> getCoches() { List<org.bson.Document>
-	 * listaCoches = new ArrayList<org.bson.Document>(); List<String> urls =
-	 * getUrls(); String tipo = ""; String marca = ""; String modelo = ""; String
-	 * anno = ""; String combustible = "";
-	 * 
-	 * for (String enlace : urls) { Document doc = getHtmlDocument(URL_COCHES +
-	 * enlace); String filtro = "div[data-item-name= car-details]"; Elements lst =
-	 * doc.select(filtro); org.bson.Document coche = new org.bson.Document(); for
-	 * (Element elem : lst) { tipo =
-	 * elem.getElementsContainingOwnText("Tipo de vehículo").next().text(); marca =
-	 * elem.getElementsContainingOwnText("Marca").next().text(); modelo =
-	 * elem.getElementsContainingOwnText("Modelo").next().text(); anno =
-	 * elem.getElementsContainingOwnText("Año").next().text(); combustible =
-	 * elem.getElementsContainingOwnText("Combustible").next().text();
-	 * 
-	 * coche.append("tipo", tipo); coche.append("marca", marca);
-	 * coche.append("modelo", modelo); coche.append("ano", anno);
-	 * coche.append("combustible", combustible); // Coche coche= new
-	 * Coche(urlImagen, marca, modelo, precio, km, anno, ubicacion, // caballos,
-	 * combustible, consumoCombustible, emisiones, tipoCoche); }
-	 * 
-	 * System.out.println(marca + " , " + modelo + " , " + anno + " , " + tipo +
-	 * " , " + combustible);
-	 * 
-	 * // listaCoches.add(coche);
-	 * 
-	 * }
-	 * 
-	 * return listaCoches; }
-	 * 
-	 */
+	// INSERTAR DATOS DE COMBUSTIBLE EN MONGODB
+	public static void insertarDocumentos(ArrayList<String> preciosGasolina, ArrayList<String> preciosDiesel) {
+		for (int i = 0; i < preciosGasolina.size(); i++) {
+			org.bson.Document documento = new org.bson.Document();
+			documento.append("Semana ", i + 1);
+			documento.append("PrecioGasolina", preciosGasolina.get(i));
+			documento.append("PrecioDiesel", preciosDiesel.get(i));
+			DAOCombustible.insert(documento);
+			System.out.println("Gasolina - Semana "+(i+1)+": " + preciosGasolina.get(i));
+			System.out.println("Diesel - Semana "+(i+1)+": " + preciosDiesel.get(i));
+		}
+	}
 
 	public static Document getHtmlDocument(String url) {
 
