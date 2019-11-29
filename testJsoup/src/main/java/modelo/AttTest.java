@@ -26,15 +26,18 @@ public class AttTest {
 		File outputFile = new File(fileName);
 		FileWriter fileWriter = new FileWriter(outputFile);
 		BufferedWriter buffWriter = new BufferedWriter(fileWriter);
-		buffWriter.write("@relation 'Precio'\n");
+		
+		buffWriter.write("@relation C__Users_oscar_git_UC3M_IntegracionSistemas_testJsoup\n");
 		for (int i = 0; i < 2; i++) {
 			buffWriter.write("@attribute x_"+i+" numeric\n");
 		}
-		buffWriter.write("@attribute class numeric\n");
+		//buffWriter.write("@attribute class numeric\n");
 		buffWriter.write("@data\n");
 		
+		int cont = 1;
 		for (Float float1 : datos) {
-			buffWriter.write(float1.toString()+"\n");
+			buffWriter.write(cont+","+float1.toString()+"\n");
+			cont++;
 		}
 		
 		buffWriter.close();
