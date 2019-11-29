@@ -1,4 +1,4 @@
-package extractor;
+package extractor.DistintivoMedioambiental;
 
 import java.util.ArrayList;
 

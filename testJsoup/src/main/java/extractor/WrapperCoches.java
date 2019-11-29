@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.bson.Document;
 
+import extractor.Coches.ScrapperCoches;
+import extractor.DistintivoMedioambiental.ScrapperDistintivos;
 import modelo.DAOCoches;
 import valoraciones.Utils;
 
@@ -14,8 +16,10 @@ public class WrapperCoches {
 	public static void main(String[]args) {
 		ScrapperDistintivos sDistintivos=new ScrapperDistintivos();
 		listaDistintivos=sDistintivos.getInfoDistintivos();
+		System.out.println(listaDistintivos);
 		ScrapperCoches sCoches=new ScrapperCoches();
-		//sCoches.guardarCoches();
+		
+		sCoches.guardarCoches();
 	}
 	public static void asignarDistintivo(org.bson.Document coche) {
 		for(org.bson.Document docDistintivo: listaDistintivos) {
@@ -57,9 +61,8 @@ public class WrapperCoches {
 				}
 					
 	
-			}else {
-				coche.append("distintivo","");
 			}
+
 			}
 	}
 	public static void evaluarCoche(org.bson.Document coche) {

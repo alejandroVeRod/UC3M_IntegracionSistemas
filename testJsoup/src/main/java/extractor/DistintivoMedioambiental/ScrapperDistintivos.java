@@ -1,4 +1,4 @@
-package extractor;
+package extractor.DistintivoMedioambiental;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,7 +37,7 @@ public class ScrapperDistintivos {
 	}
 
 	/**
-	 * Método que devolverá los distintivos ambientales y su información asociada
+	 * Mï¿½todo que devolverï¿½ los distintivos ambientales y su informaciï¿½n asociada
 	 * */
 	private static List<org.bson.Document> getDistintivos() throws IOException {
 		List<org.bson.Document> infoDistintivos = new ArrayList<org.bson.Document>();
@@ -48,7 +48,7 @@ public class ScrapperDistintivos {
 		Elements descDistintivos = doc.select("h3 + p");
 
 		for (int i=0; i<etiquetas.size(); i++) {
-			String distintivo = etiquetas.get(i).text().replace("Vehículos ","").trim().toUpperCase();
+			String distintivo = etiquetas.get(i).text().replace("VehÃ­culos ","").trim().toUpperCase();
 			if (distintivo.contentEquals("0")) {
 				org.bson.Document docDistintivoZero = new org.bson.Document();
 				
@@ -82,13 +82,13 @@ public class ScrapperDistintivos {
 
 		ArrayList<String> combustiblesZero = new ArrayList<String>();
 
-		Pattern p1 = Pattern.compile("eléctricos de batería");
+		Pattern p1 = Pattern.compile("elÃ©ctricos de baterÃ­a");
 		Pattern p2 = Pattern.compile("BEV");
-		Pattern p3 = Pattern.compile("autonomía extendida");
+		Pattern p3 = Pattern.compile("autonomÃ­a extendida");
 		Pattern p4 = Pattern.compile("REEV");
-		Pattern p5 = Pattern.compile("eléctricos híbridos enchufables");
+		Pattern p5 = Pattern.compile("elÃ­ctricos hÃ­bridos enchufables");
 		Pattern p6 = Pattern.compile("PHEV");
-		Pattern p7 = Pattern.compile("vehículos de pila de combustible");
+		Pattern p7 = Pattern.compile("vehÃ­culos de pila de combustible");
 
 		Matcher zero1 = p1.matcher(descripcionDistintivo);
 		if (zero1.find()) {
@@ -130,8 +130,8 @@ public class ScrapperDistintivos {
 
 		ArrayList<String> combustiblesEco = new ArrayList<String>();
 
-		Pattern p8 = Pattern.compile("híbridos enchufables con una autonomía inferior a 40 km");
-		Pattern p9 = Pattern.compile("híbridos no enchufables");
+		Pattern p8 = Pattern.compile("hÃ­bridos enchufables con una atonomÃ­a de 40 km");
+		Pattern p9 = Pattern.compile("hÃ­bridos no enchufables");
 		Pattern p10 = Pattern.compile("HEV");
 		Pattern p11 = Pattern.compile("GNC");
 		Pattern p12 = Pattern.compile("GNL");
@@ -172,7 +172,7 @@ public class ScrapperDistintivos {
 	public static DistintivoC crearDistintivoC(String distintivo, String descripcionDistintivo) {
 
 		Pattern p14 = Pattern.compile("gasolina matriculados a partir de enero de 2006");
-		Pattern p15 = Pattern.compile("diésel matriculados después de enero de 2014");
+		Pattern p15 = Pattern.compile("diÃ©sel matriculados despuÃ©s de enero de 2014");
 
 		String inicioPeriodoDistintivoGasolina = "";
 		String inicioPeriodoDistintivoDiesel = "";
@@ -197,7 +197,7 @@ public class ScrapperDistintivos {
 	public static DistintivoB crearDistintivoB(String distintivo, String descripcionDistintivo) {
 
 		Pattern p16 = Pattern.compile("gasolina posteriores al 2000");
-		Pattern p17 = Pattern.compile("diésel matriculadas desde enero de 2006");
+		Pattern p17 = Pattern.compile("diÃ©sel matriculadas desde enero de 2006");
 
 		String inicioPeriodoDistintivoGasolina = "";
 		String inicioPeriodoDistintivoDiesel = "";
@@ -224,7 +224,7 @@ public class ScrapperDistintivos {
 		try {
 			doc = Jsoup.connect(url).userAgent("Mozilla/5.0").timeout(100000).get();
 		} catch (IOException ex) {
-			System.out.println("Excepciï¿½n al obtener el HTML de la pï¿½gina" + ex.getMessage());
+			System.out.println("ExcepciÃ³n al obtener el HTML de la pï¿½gina" + ex.getMessage());
 		}
 		return doc;
 	}

@@ -1,15 +1,15 @@
-package extractor;
+package extractor.DistintivoMedioambiental;
 
-public class DistintivoC extends Distintivo {
+public class DistintivoB extends Distintivo {
 	
 	String inicioPeriodoDistintivoGasolina = "";
 	String inicioPeriodoDistintivoDiesel = "";
 	
-	public DistintivoC() {
+	public DistintivoB() {
 		super();
 	}
 
-	public DistintivoC(String inicioPeriodoDistintivoGasolina, String inicioPeriodoDistintivoDiesel,
+	public DistintivoB(String inicioPeriodoDistintivoGasolina, String inicioPeriodoDistintivoDiesel,
 			String finPeriodoDistintivo, String finPeriodoDistintivoGasolina, String finPeriodoDistintivoDiesel) {
 		super();
 		this.inicioPeriodoDistintivoGasolina = inicioPeriodoDistintivoGasolina;

@@ -3,7 +3,7 @@ package valoraciones;
 public class Utils {
 	
 	/**
-	 * Método que da un valor al coche en el momento de la inserción sobre un máximo de 5
+	 * Mï¿½todo que da un valor al coche en el momento de la inserciï¿½n sobre un mï¿½ximo de 5
 	 **/
 	public static float setValorCoche (String distintivo, int ano, String kilometraje) {
 		
@@ -36,8 +36,7 @@ public class Utils {
 			valoracion += 1;
 		}
 		
-		//if(distintivo!=null) {
-			
+		if(distintivo!=null) {
 			switch (distintivo) {
 			case "B":
 				valoracion += 2;
@@ -56,12 +55,12 @@ public class Utils {
 				break;
 			}
 			System.out.println("valoracion distintivo"+distintivo+" "+valoracion);
-		//}
+		}
 		return valoracion/3;
 	}
 	
 	/**
-	 * Método que suma al valor del coche otro valor basado en la adecuación del coche devuelto a los parámetros de búsqueda 
+	 * Mï¿½todo que suma al valor del coche otro valor basado en la adecuaciï¿½n del coche devuelto a los parï¿½metros de bï¿½squeda 
 	 **/
 	public static float setAgregarValorPorBusqueda (String precioMin, String precioMax, String precio, String kilometrajeMin, String kilometrajeMax, String kilometraje, 
 			String marcaBusqueda, String marcaEncontrada, String modeloBusqueda, String modeloEncontrado, String annoBusqueda, String annoMatricula) {

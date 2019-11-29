@@ -1,4 +1,4 @@
-package extractor;
+package extractor.DistintivoMedioambiental;
 
 public class DistintivoEco extends Distintivo {
 
