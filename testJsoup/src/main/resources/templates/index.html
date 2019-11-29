@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+	<title th:text="${titulo}"></title>
+	<link rel="shortcut icon" href="/img/brand.png" />
+	
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css"/>
+
+	<link rel="stylesheet" type="text/css" href="/css/fontawesome-free-5.11.2/css/regular.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/fontawesome-free-5.11.2/css/solid.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/fontawesome-free-5.11.2/css/fontawesome.css"/>	
+	
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.css"/>
+	
+	<!-- Este es nuestro estilo que sobreescribe los de bootstrap para personalizar la app -->
+	<link rel="stylesheet" type="text/css" href="/css/site.css"/>	
+	
+	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.js"></script>	
+	<script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>	
+	
+</head>
+
+<!-- <header>
+	<div class="text-center">
+		<img src="../img/brand.png" class="rounded" style="width: 5%; height: 5%"></img>
+	</div>	
+</header> -->
+
+<body id="page-top">	
+	<nav class="navbar navbar-expand-lg navbar-light bg-gold">	  
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li>
+	    </ul>	
+	    <a class="navbar-brand" href="#">NEXTCAR</a>  
+	    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+	      <li class="nav-item active">
+	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" href="#">Link</a>
+	      </li>
+	    </ul>	  
+	  </div>
+	</nav>
+	<div class="container-fluid">		
+		<div class="row col-md-12">
+			<div class="col-md-4 panel-gold">
+				<form action="#" method="post" th:action="@{/}" th:object="${command}">
+					<h4 class="text-center">
+						<span class="fa fa-search"></span>
+						B&uacute;squeda
+					</h4>
+					<div class="input-group mb-2">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text bg-dark" for="inputGroupSelect01">Precio Mínimo:</label>
+					  </div>
+					  <select class="custom-select" th:field="*{precioMinimo}"> 
+				   		<option th:value="0">Seleccione</option>
+					    <option 
+					        th:each="precio : ${precios}" 
+					        th:value="${precio}" 
+					        th:text="${precio}"></option>
+				      </select>
+					</div>
+					<div class="input-group mb-2">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text bg-dark" for="inputGroupSelect02">Precio Máximo:</label>
+					  </div>
+					  <select class="custom-select" th:field="*{precioMaximo}">
+					  	<option th:value="0">Seleccione</option>
+					    <option 
+					        th:each="precio : ${precios}" 
+					        th:value="${precio}" 
+					        th:text="${precio}"></option>
+				      </select>
+					</div>	
+					
+					<h4 class="text-center">
+						<span class="fa fa-search-plus"></span>
+						Avanzada
+					</h4>
+					<div class="input-group mb-2">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text bg-dark text-white">Marca:</label>
+					  </div>
+					  <select class="custom-select" th:field="*{marca}"> 
+					  	<option th:value="0">Seleccione</option>					   		 
+					    <option 
+					        th:each="brand : ${marcas}" 
+					        th:value="${brand}" 
+					        th:text="${brand}"></option>
+				      </select>
+					</div>
+					<div class="input-group mb-2">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text bg-dark text-white">Modelo:</label>
+					  </div>
+					  <select class="custom-select" th:field="*{modelo}"> 
+					  	<option th:value="0">Seleccione</option>					   		 
+					    <option 
+					        th:each="model : ${modelos}" 
+					        th:value="${model}" 
+					        th:text="${model}"></option>
+				      </select>
+					</div>			
+					<div class="input-group mb-2">
+					  <div class="input-group-prepend">
+					    <label class="input-group-text bg-dark text-white">Kilometraje:</label>
+					  </div>
+					  <select class="custom-select" th:field="*{kilometraje}"> 
+					  	<option th:value="0">Seleccione</option>					   		 
+					    <option 
+					        th:each="km : ${kilometros}" 
+					        th:value="${km}" 
+					        th:text="${km}"></option>
+				      </select>
+					</div>				
+					<input type="submit" value="Buscar" class="btn btn-gold-black float-right mb-4"/>					
+				</form>
+			</div>
+			
+			<div class="col-md-1" > <!-- style="background-color: rgb(223,182,90);" -->
+				<!-- <img alt="" src="../img/brand.png">  -->
+			</div>
+			
+			<div class="col-md-7 panel-gold">				
+				<div class="row" th:if="${coches.size()>1}">
+					<div class="row col-md-12">
+						<div class="col-md-4">
+							<img alt="Imagen del coche" th:src="${coches[0].imagen}" class="img-thumbnail">						
+						</div>
+						<div class="col-md-8 row">
+							<div class="col-md-8">
+								<h4 class="coche-header" th:text="${coches[0].marca} + ' ' +  ${coches[0].modelo}"></h4>
+								<span class="star">
+								   	<i class="fas fa-star"></i>
+								   	<i class="fas fa-star"></i>
+								   	<i class="far fa-star"></i>
+								</span>
+								<div class="row">
+									<img src="../img/icon/cero-emisiones.png" class="img-responsive" style="width: 25%; height: 25%">
+								</div>
+							</div>							
+							<div class="col-md-4">								
+								<span class="price fas fa-euro-sign float-right"></span>		
+							    <h3 class="price float-right" th:text="${coches[0].precio}"></h3>
+							    					    
+							    <a th:href="${coches[0].enlace}" target="blank" class="btn btn-black float-right">Comprar</a>	
+							</div>												    
+						</div>
+					</div>
+					
+					<div class="row col-md-12">
+						<div class="col-md-6">
+							<h5 class="card-title">
+								<i class="fas fa-calendar-week" data-toggle="tooltip" title="Año"></i>
+					  			<span th:text="${coches[0].ano}"></span>
+					  		</h5>
+					  		<h5 class="card-title">
+					  			<i class="fas fa-car" data-toggle="tooltip" title="Consumo"></i>
+					  			<span th:text="${coches[0].consumo} + ' L/Km'"></span>
+					  		</h5>
+						</div>
+						<div class="col-md-6">
+							<h5 class="card-title">
+								<i class="fas fa-gas-pump" data-toggle="tooltip" title="Tipo de combustible"></i>
+					  			<span th:text="${coches[0].tipoCombustible}"></span>
+					  		</h5>
+					  		
+					  		<h5 class="card-title">
+					  			<i class="fas fa-road" data-toggle="tooltip" title="Kilómetros recorridos"></i>
+					  			<span th:text="${coches[0].kilometraje} + ' Km'"></span>
+					  		</h5>	
+						</div>				  					  		
+					</div>				
+				</div>				
+			</div>
+		</div>
+		<div class="row col-md-12">
+			<div class="col-md-12 panel-gold">
+				<h5 th:if="${coches.isEmpty()}" class="text-center">No hay resultados que mostrar</h5>
+				<h5 th:if="${coches.size()==1}" class="text-center" th:text="'Se encontró '+${coches.size()} + ' resultado que mostrar'"></h5>
+				<h5 th:if="${coches.size()>1}" class="text-center" th:text="'Se encontraron '+${coches.size()} + ' resultados que mostrar'"></h5>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-3" th:each="coche,iter : ${coches}">
+					<div th:if="${iter.index} > 0">			
+						<div class="card">
+						  <img class="card-img-top" th:src="${coche.imagen}" alt="Imagen del coche">
+						  <div class="card-body">
+						    <h5 class="card-title" th:text="${coche.marca}+ ' - '+${coche.modelo}">Marca</h5>
+						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <a th:href="${coche.enlace}" target="blank" class="btn btn-black" data-toggle="tooltip" data-placement="top" title="Ver información del coche">Ver</a>
+						  </div>
+						</div>				
+					</div>						
+				</div>	
+			</div>				
+		</div>
+		
+							
+	</div>
+</body>
+
+</html>
