@@ -1,0 +1,13 @@
+/**
+* float setValorCoche(String distintivo, String annoMatricula, String kilometraje) 
+* 	se llama despues de recuperar el distintivo justo antes de insertar un nuevo coche. Se pasa como parametros el nombre del distintivo, el año de matricula y el kilometraje como variables de tipo String
+*
+*
+* float setAgregarValorPorBusqueda (String precioMin, String precioMax, String precio, String kilometrajeMin, String kilometrajeMax, String kilometraje, 
+*			String marcaBusqueda, String marcaEncontrada, String modeloBusqueda, String modeloEncontrado, String annoBusqueda, String annoMatricula)
+*
+* se llama en el momento de mostrar un coche y recuperar sus atributos
+* para que funcione es necesario tener disponibles los valores de busqueda del usuario bien en variables, bien en una colección de objetos de tipo string
+* 
+* cuando se recupere un coche y se vayan a mostrar sus atributos, la idea es, que a la valoracion original se sume el valor devuelto por este metodo.
+*/
