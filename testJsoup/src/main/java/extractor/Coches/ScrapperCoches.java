@@ -12,7 +12,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import extractor.WrapperCoches;
+import extractor.Combustible.WrapperCoches;
 import modelo.DAOCoches;
 import valoraciones.Utils;
 

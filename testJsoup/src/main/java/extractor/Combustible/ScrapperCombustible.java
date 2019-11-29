@@ -1,4 +1,4 @@
-package extractor;
+package extractor.Combustible;
 
 import java.io.IOException;
 import java.util.ArrayList;
