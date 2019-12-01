@@ -197,18 +197,22 @@
 				<h5 th:if="${coches.size()>1}" class="text-center" th:text="'Se encontraron '+${coches.size()} + ' resultados que mostrar'"></h5>
 			</div>
 			
+			
 			<div class="row">
-				<div class="col-md-3" th:each="coche,iter : ${coches}">
-					<div th:if="${iter.index} > 0">			
-						<div class="card">
-						  <img class="card-img-top" th:src="${coche.imagen}" alt="Imagen del coche">
-						  <div class="card-body">
-						    <h5 class="card-title" th:text="${coche.marca}+ ' - '+${coche.modelo}">Marca</h5>
-						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						    <a th:href="${coche.enlace}" target="blank" class="btn btn-black" data-toggle="tooltip" data-placement="top" title="Ver información del coche">Ver</a>
-						  </div>
-						</div>				
-					</div>						
+				<div class="col-md-6">
+					<iframe class="panel-gold" width="600" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.772945404052735%2C40.38094375470547%2C-3.641452789306641%2C40.455437831262365&amp;layer=hot&amp;marker=40.41820110334611%2C-3.7071990966796875"></iframe><br/><small>
+					<a target="blank" href="https://www.openstreetmap.org/?mlat=40.4182&amp;mlon=-3.7072#map=13/40.4182/-3.7072&amp;layers=H">Ver mapa más grande</a></small>
+				</div>
+				<div class="col-md-3" th:each="coche,iter : ${coches}" th:if="${iter.index} > 0">
+					<div class="card">
+					  <img class="card-img-top" th:src="${coche.imagen}" alt="Imagen del coche">
+					  <div class="card-body">
+					    <h5 class="card-title" th:text="${coche.marca}+ ' - '+${coche.modelo}">Marca</h5>
+					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					    <a th:href="${coche.enlace}" target="blank" class="btn btn-black" data-toggle="tooltip" data-placement="top" title="Ver información del coche">Ver</a>
+					  </div>
+					</div>
+									
 				</div>	
 			</div>				
 		</div>
