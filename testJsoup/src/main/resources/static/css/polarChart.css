@@ -1,7 +1,7 @@
 #container {
-    min-width: 360px;
-    max-width: 600px;
-    height: 400px;
+/*     min-width: 360px; */
+    /*max-width: 600px;*/
+    height: 300px;
     margin: 0 auto;
 }
 
@@ -33,4 +33,9 @@ table tr:nth-child(even) {
 th {
 	font-weight: 600;
     padding: 10px;
+}
+
+/*NEWS*/
+.highcharts-button-symbol, .highcharts-credits{
+	display: none;
 }

@@ -43,6 +43,14 @@ public class DAOCoches {
 		return listaCoches;
 	}	
 	
+	public static List<Double> getKilometers() {		
+		List<Double> kms= new ArrayList<Double>(); 
+		for(Document doc: listaCoches) {
+			kms.add(doc.getDouble("kilometraje"));
+		}
+		return kms;
+	}	
+	
 	public static List<Document> advance(float minPrecio,float maxPrecio,String marca, String modelo){
 		//b�squeda base (todos los coches con un precio mayor a cero u otro valor)
 		Bson filtro= and(gt("precio",minPrecio));

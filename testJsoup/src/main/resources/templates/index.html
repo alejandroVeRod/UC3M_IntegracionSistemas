@@ -154,14 +154,16 @@
 							<img alt="Imagen del coche" th:src="${coches[0].imagen}" class="img-thumbnail">						
 						</div>
 						<div class="col-md-8 row">
-							<div class="col-md-8">
+							<div class="col-md-6">
 								<h4 class="coche-header" th:text="${coches[0].marca} + ' ' +  ${coches[0].modelo}"></h4>
 								<span class="star">
 								   	<i class="fas fa-star"></i>
 								   	<i class="fas fa-star"></i>
 								   	<i class="far fa-star"></i>
 								</span>
+								
 								<div class="row">
+								
 									<!-- <img th:if="${coches[0].distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="25%" height="25%" class="img-thumbnail">
 									<img th:if="${coches[0].distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="25%" height="25%" class="img-thumbnail">
 									<img th:if="${coches[0].distintivo.equals('Eco')}" src="../img/icon/eco-emisiones.png" width="25%" height="25%" class="img-thumbnail">
@@ -169,16 +171,19 @@
 										 -->								
 								</div>
 							</div>							
-							<div class="col-md-4">								
-								<span class="price fas fa-euro-sign float-right"></span>		
-							    <h3 class="price float-right" th:text="${coches[0].precio}"></h3>
-							 					    			    
+							<div class="col-md-6">								
+ 								<span class="price fas fa-euro-sign float-right"></span>		 
+ 							    <h3 class="price float-right" th:text="${coches[0].precio}"></h3> 	    			    
 							    <a th:href="${coches[0].enlace}" target="blank" class="btn btn-black float-right">Comprar</a>	
 							</div>												    
 						</div>
 					</div>	
 					
 					<div class="row col-md-12">
+						<div class="col-md-6">
+							<a href="#container" th:onclick="drawChart('${coches[0].kilometraje}')">Ver evaluaci&oacute;n</a>
+ 							<div id="container"></div> 
+						</div>	
 						<div class="col-md-3">
 							<h5 class="card-title">
 								<i class="fas fa-calendar-week" data-toggle="tooltip" title="Año"></i>
@@ -200,8 +205,8 @@
 					  			<span th:text="${coches[0].kilometraje} + ' Km'"></span>
 					  		</h5>	
 						</div>
-						<div class="col-md-6" id="container">
-						</div>				  					  		
+						
+									  					  		
 					</div>				
 				</div>				
 			</div>
@@ -239,5 +244,7 @@
 							
 	</div>
 </body>
-<script type="text/javascript" th:src="@{/js/polarChart.js}"></script>	
+<script th:inline="javascript" th:src="@{/js/polarChart.js}"></script>
+
+<!-- <script type="text/javascript" th:src="@{/js/polarChart.js}"></script>	 -->
 </html>
