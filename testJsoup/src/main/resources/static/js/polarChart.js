@@ -1,8 +1,9 @@
-function drawChart(item){
+function drawChart(id, km, uso, consumo, precio, evaluacion){
+	//console.log(item);
 	/*<![CDATA[*/
-		Highcharts.chart('container', {
+		Highcharts.chart(id, {
 	        chart: {
-	        	renderTo: 'container',
+	        	renderTo: id,
 	            polar: true,
 	            type: 'line'
 	        },
@@ -11,14 +12,33 @@ function drawChart(item){
 	        },
 	        title: {
 	            text: '',
-	            x: -80
+//	            x: -80
 	        },
 	        pane: {
-	            size: '80%'
+	            size: '80%' /*80*/
 	        },
-	        xAxis: {
-	            categories: ['Kilometraje', 'Uso', 'Consumo', 'Customer Support',
-	                'Information Technology', 'Administration'],
+	        xAxis: {	        	
+	            categories: ['Km', 'Uso', 'Consumo', 'Precio', 'Evaluación'],	
+	            labels: {
+	                formatter: function () {
+	                    if ('Km' === this.value) {	  
+	                    	return'<img src="../css/fontawesome-free-5.11.2/svgs/solid/road.svg" alt="" style="vertical-align: middle; width: 20px; height: 20px"/>';
+	                    } 
+	                    if ('Uso' === this.value) {	                    	
+	                    	return'<img src="../css/fontawesome-free-5.11.2/svgs/solid/clock.svg" alt="" style="vertical-align: middle; width: 20px; height: 20px"/>';
+	                    } 
+	                    if ('Consumo' === this.value) {	                    	
+	                    	return'<img src="../css/fontawesome-free-5.11.2/svgs/solid/gas-pump.svg" alt="" style="vertical-align: middle; width: 20px; height: 20px"/>';
+	                    } 
+	                    if ('Precio' === this.value) {	                    	
+	                    	return'<img src="../css/fontawesome-free-5.11.2/svgs/solid/euro-sign.svg" alt="" style="vertical-align: middle; width: 20px; height: 20px"/>';
+	                    } 
+	                    if ('Evaluación' === this.value) {	                    	
+	                    	return'<img src="../css/fontawesome-free-5.11.2/svgs/solid/clipboard.svg" alt="" style="vertical-align: middle; width: 20px; height: 20px"/>';
+	                    } 
+	                },
+	                useHTML: true
+	            },
 	            tickmarkPlacement: 'on',
 	            lineWidth: 0
 	        },
@@ -29,26 +49,39 @@ function drawChart(item){
 	        },
 	        tooltip: {
 	            shared: true,
-	            pointFormat: '<span style="color:{series.color}">{series.name}: <b>${point.y:,.0f}</b><br/>'
+	            pointFormat: '<span style="color:{series.color}">{series.name}: <b>{point.y:,.0f}</b><br/>'
 	        },
 	        legend: {
 	            align: 'right',
 	            verticalAlign: 'middle'
 	        },
 	        series: [{
-	            name: 'Allocated Budget',
-	            data: /*[[item]]*/[],
-	            pointPlacement: 'on'
-	        }, {
-	            name: 'Actual Spending',
-	            data: [50000, 39000, 42000, 31000, 26000, 14000],
-	            pointPlacement: 'on'
+	        	name: 'Valor',
+	            //data: [parseInt(km), parseInt(uso), parseInt(consumo), parseInt(precio), parseInt(evaluacion)],
+	            pointPlacement: 'on',
+	            colorByPoint:true,
+	            data: [{
+                    name: 'Kilometraje',
+                    y: parseInt(km)
+                },{
+                    name: 'Consumo',
+                    y: parseInt(consumo)
+                },{
+                    name: 'Antiguedad',
+                    y:parseInt(uso)
+                },{
+                    name: 'Precio',
+                    y:parseInt(precio)
+                },{
+                    name: 'Evaluacion',
+                    y: parseInt(evaluacion)
+                }]
 	        }],
 
 	        responsive: {
 	            rules: [{
 	                condition: {
-	                    maxWidth: 500
+	                    maxWidth: 300
 	                },
 	                chartOptions: {
 	                    legend: {
@@ -56,7 +89,7 @@ function drawChart(item){
 	                        verticalAlign: 'bottom'
 	                    },
 	                    pane: {
-	                        size: '70%'
+	                        size: '80%'
 	                    }
 	                }
 	            }]

@@ -1,12 +1,13 @@
 #container {
 /*     min-width: 360px; */
     /*max-width: 600px;*/
-    height: 300px;
+    height: 200px;
+    width: 200px;
     margin: 0 auto;
 }
 
 caption {
-	padding-bottom: 15px;
+/* 	padding-bottom: 15px; */
 	font-family: 'Verdana';
 	font-size: 1.2em;
 	color:#555;
@@ -17,7 +18,7 @@ table {
 	font-size: 12pt;          
 	border-collapse: collapse;
 	border: 1px solid #EBEBEB;
-	margin: 10px auto;
+/* 	margin: 10px auto; */
     text-align: center;
     width: 100%;
 }
@@ -32,10 +33,10 @@ table tr:nth-child(even) {
 
 th {
 	font-weight: 600;
-    padding: 10px;
+/*     padding: 10px; */
 }
 
 /*NEWS*/
-.highcharts-button-symbol, .highcharts-credits{
+.highcharts-button-symbol, .highcharts-credits, .highcharts-legend-item{
 	display: none;
 }

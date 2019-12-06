@@ -58,6 +58,10 @@ body{
 	color: black;
 }
 
+.panel-header{
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
 .panel-gold{
 	border-style: solid;
 	border-color: rgb(223,182,90);
@@ -80,6 +84,7 @@ body{
 
 span.star{
 	color: rgb(223,182,90);
+	padding-top: 1em;
 }
 
 .price{
@@ -106,3 +111,11 @@ span.star{
 	font-weight: bold;
 	font-style: italic;
 }
+.col-md-12{
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+}
+.col-md-12.col-md-12-fix{
+	padding-top: 0em;
+}
+
