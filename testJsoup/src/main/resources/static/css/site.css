@@ -6,6 +6,12 @@
 	padding-bottom: 0.5em;
 	padding-top: 2em;
 }
+
+.navbar-brand{
+	width: 100%;
+	text-align: center;
+}
+
 /*NEWSS STYLES*/
 .bg-gold{
 	border-color: rgb(233,182,90);
@@ -93,18 +99,10 @@ span.star{
 	font-style: italic;
 }
 
-.img-carousel{
-	height: 100%;
-}
-.carousel-control-next-icon, .carousel-control-prev-icon{
-	background-color: rgb(223,182,90);
-}
-
 /*OLDS*/
 .text-white{
 	color: white;
 }
-
 
 .coche-header{
 	color: rgb(247,232,100);
@@ -118,4 +116,24 @@ span.star{
 .col-md-12.col-md-12-fix{
 	padding-top: 0em;
 }
+.fas.fa-euro-sign{
+	padding-top: 0.8em;
+}
 
+.card-header{
+	background-color: white;
+}
+.card-body{
+	border-color: rgb(223,182,90);
+    border-style: double;
+}
+.card-img-top{
+	max-width: 272px;
+	max-height: 192px;
+}
+
+/* ESTILOS DEL MAPA */
+/* .leaflet-control-zoom-in{ */
+/* 	background-color: black; */
+/* 	color: rgb(223,182,90); */
+/* } */

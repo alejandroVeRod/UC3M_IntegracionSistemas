@@ -18,6 +18,7 @@
 	
 	<!-- Este es nuestro estilo que sobreescribe los de bootstrap para personalizar la app -->
 	<link rel="stylesheet" type="text/css" href="/css/site.css"/>	
+	<link rel="stylesheet" type="text/css" href="/css/carousel.css"/>
  	<link rel="stylesheet" type="text/css" href="/css/polarChart.css"/>	
 	
 	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.js"></script>	
@@ -47,23 +48,24 @@
 	  </button>
 	
 	  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
-	    </ul>	
-	    <a class="navbar-brand" href="#">NEXTCAR</a>  
-	    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-	      <li class="nav-item active">
-	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link" href="#">Link</a>
-	      </li>
-	    </ul>	  
+<!-- 	    <ul class="navbar-nav mr-auto mt-2 mt-lg-0"> -->
+<!-- 	      <li class="nav-item active"> -->
+<!-- 	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+<!-- 	      </li> -->
+<!-- 	      <li class="nav-item"> -->
+<!-- 	        <a class="nav-link" href="#">Link</a> -->
+<!-- 	      </li> -->
+<!-- 	    </ul>	 -->
+ 	    <a class="navbar-brand" href="#">NEXTCAR</a>  
+	    
+<!-- 	    <ul class="navbar-nav ml-auto mt-2 mt-lg-0"> -->
+<!-- 	      <li class="nav-item active"> -->
+<!-- 	        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
+<!-- 	      </li> -->
+<!-- 	      <li class="nav-item"> -->
+<!-- 	        <a class="nav-link" href="#">Link</a> -->
+<!-- 	      </li> -->
+<!-- 	    </ul>	   -->
 	  </div>
 	</nav>
 	<div class="container-fluid">		
@@ -157,14 +159,14 @@
 						   	<i class="far fa-star"></i>
 						</span>
 						<div class="col-md-4">
-							<span class="price fas fa-euro-sign float-right"></span>		 
-						    <h3 class="price float-right" th:text="${coches[0].precio}"></h3> 
+							<span class="price fas fa-euro-sign float-right" style="padding-top: 1.5em;"></span>		 
+						    <h3 class="price float-right" th:text="${coches[0].precio}" style="padding-top: 0.5em;"></h3> 
 						</div>						
 					</div>
 				</div>
 				<div class="row col-md-12">
 					<div class="col-md-4">
-						<img alt="Imagen del coche" th:src="${coches[0].imagen}" class="img-thumbnail">
+						<img alt="Imagen del coche" th:onerror="this.src= '/img/none-img.png'" th:src="${coches[0].imagen}" class="img-thumbnail">
 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						
 					</div>
 					<div class="col-md-3">
@@ -176,7 +178,8 @@
 						</div>	
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="50%" height="50%" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
-						</div>						
+						</div>
+						<p th:text="'Evaluación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p>						
 					</div>
 					<div class="col-md-5">
 						<div id="container"></div>						
@@ -208,39 +211,93 @@
 					</div>								  					  		
 				</div>												
 			</div>
-		</div>		
-
+		</div>	
+		
 		<div class="row col-md-12">
 			<div class="col-md-12 panel-gold">
 				<h5 th:if="${coches.isEmpty()}" class="text-center">No hay resultados que mostrar</h5>
 				<h5 th:if="${coches.size()==1}" class="text-center" th:text="'Se encontró '+${coches.size()} + ' resultado que mostrar'"></h5>
 				<h5 th:if="${coches.size()>1}" class="text-center" th:text="'Se encontraron '+${coches.size()} + ' resultados que mostrar'"></h5>
 			</div>
-			
-			
-			<div class="row">
-				<div class="col-md-6">
-					<iframe class="panel-gold" width="630" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.772945404052735%2C40.38094375470547%2C-3.641452789306641%2C40.455437831262365&amp;layer=hot&amp;marker=40.41820110334611%2C-3.7071990966796875"></iframe><br/><small>
-					<a target="blank" href="https://www.openstreetmap.org/?mlat=40.4182&amp;mlon=-3.7072#map=13/40.4182/-3.7072&amp;layers=H">Ver mapa más grande</a></small>
-				</div>
-				<div class="col-md-3" th:each="coche,iter : ${coches}" th:if="${iter.index} > 0">
-					<div class="card">					
-					  <img class="card-img-top" th:src="${coche.imagen}" alt="Imagen del coche">
-					  <div class="card-body">
-					    <h5 class="card-title" th:text="${coche.marca}+ ' - '+${coche.modelo}">Marca</h5>					    
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a th:href="${coche.enlace}" target="blank" class="btn btn-black" data-toggle="tooltip" data-placement="top" title="Ver información del coche">Ver</a>
-					  </div>
-					</div>
-									
-				</div>	
-			</div>				
 		</div>
-		
-							
+		<div class="row col-md-12">				
+			<div class="MultiCarousel panel-gold" data-items="1,3,4,5,6" data-slide="1" id="MultiCarousel"  data-interval="1000">
+	            <div class="MultiCarousel-inner">
+	                <div class="item col-md-4"  th:each="coche,iter : ${coches}" th:if="${iter.index} > 0">
+	                    <div class="pad15">
+	                        <div class="card">	
+	                        	<div class="card-header">
+								    Featured
+								  </div>				
+							  <img class="card-img-top img-thumbnail" th:onerror="this.src= '/img/none-img.png'" th:src="${coche.imagen}" alt="Imagen del coche">
+							  <div class="card-body">
+								  <div class="row">
+								  	<div class="col-md-7">
+								  		<h5 class="card-title" th:text="${coche.marca}+ ' '+${coche.modelo}">Marca</h5>						  		
+								  	</div>
+								  	<div class="col-md-5">
+								  		<span class="price fas fa-euro-sign float-right"></span>		 
+							    		<h3 class="price float-right" th:text="${coche.precio}"></h3> 
+								  	</div>						  	
+								  </div>					    
+							    <div class="row">						
+									<div class="col-md-6">
+										<p class="card-title">
+											<i class="fas fa-calendar-week" data-toggle="tooltip" title="Año"></i>
+								  			<span th:text="${coche.ano}"></span>
+								  		</p>
+								  		<p class="card-title">
+								  			<i class="fas fa-car" data-toggle="tooltip" title="Consumo"></i>
+								  			<span th:text="${coche.consumo} + ' L/Km'"></span>
+								  		</p>
+									</div>
+									<div class="col-md-6">
+										<p class="card-title">
+											<i class="fas fa-gas-pump" data-toggle="tooltip" title="Tipo de combustible"></i>
+								  			<span th:text="${coche.tipoCombustible}"></span>
+								  		</p>				  		
+								  		<p class="card-title">
+								  			<i class="fas fa-road" data-toggle="tooltip" title="Kilómetros recorridos"></i>
+								  			<span th:text="${coche.kilometraje} + ' Km'"></span>
+								  		</p>	
+									</div>							  					  		
+								</div>
+								<div class="row">					    	
+						    		<div class="col-md-6" th:if="${coche.get('distintivo')!= null}">
+										<img th:if="${coche.distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+										<img th:if="${coche.distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+										<img th:if="${coche.distintivo.equals('Eco')}" src="../img/icon/eco-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+										<img th:if="${coche.distintivo.equals('Cero')}" src="../img/icon/cero-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+									</div>	
+									<div class="col-md-6" th:if="${coche.get('distintivo')== null}">
+										<img src="../img/icon/sin-distintivo.png" width="60em" height="60em" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
+									</div>
+									<div class="col-md-6">
+										<a th:href="${coche.enlace}" target="blank" class="btn btn-black float-right" data-toggle="tooltip" data-placement="top" title="Ver información del coche">Ver</a>
+									</div>					    	
+							    </div>	    					    
+							    
+							    
+							  </div>
+							</div>
+	                    </div>
+	                </div>	                
+	            </div>
+	            <img src="/img/icon/direction_arrow_gold_left.png" class="leftLst"/>
+	            <img src="/img/icon/direction_arrow_gold_right.png" class="rightLst"/>
+	        </div>
+		</div>
+		<div class="row col-md-12" id="map">
+			<div class="">
+				<iframe id="mapView" class="panel-gold" width="630" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.772945404052735%2C40.38094375470547%2C-3.641452789306641%2C40.455437831262365&amp;layer=hot&amp;marker=40.41820110334611%2C-3.7071990966796875"></iframe><br/><small>
+				<a target="blank" href="https://www.openstreetmap.org/?mlat=40.4182&amp;mlon=-3.7072#map=13/40.4182/-3.7072&amp;layers=H">Ver mapa más grande</a></small>
+			</div>	
+		</div>							
 	</div>
 </body>
 <script th:inline="javascript" th:src="@{/js/polarChart.js}"></script>
+<script th:inline="javascript" th:src="@{/js/carousel.js}"></script>
+<script th:inline="javascript" th:src="@{/js/maps.js}"></script>
 
 <!-- <script type="text/javascript" th:src="@{/js/polarChart.js}"></script>	 -->
 </html>

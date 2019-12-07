@@ -21,7 +21,7 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String index(Model model) {
-		model.addAttribute("titulo", "TuMejorCoche");
+		model.addAttribute("titulo", "NextCar");
 		
 		//obteniendo coches
 		
