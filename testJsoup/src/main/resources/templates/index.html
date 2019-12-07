@@ -149,7 +149,7 @@
 				<!-- <img alt="" src="../img/brand.png">  -->
 			</div>
 			
-			<div class="col-md-7 panel-gold" th:if="${coches.size()>1}">	
+			<div class="col-md-7 panel-gold" th:if="${coches.size()>=0}">	
 				<div class="row panel-header" >
 					<div class="row col-md-12 col-md-12-fix">
 						<h4 class="coche-header col-md-4" th:text="${coches[0].marca} + ' ' +  ${coches[0].modelo}"></h4>
@@ -179,7 +179,8 @@
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="50%" height="50%" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
 						</div>
-						<p th:text="'Evaluación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p>						
+						<p th:text="'Puntuación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p>
+						<p th:text="'Categoría: '+${coches[0].categoria}"></p>						
 					</div>
 					<div class="col-md-5">
 						<div id="container"></div>						
@@ -206,7 +207,13 @@
 				  			<span th:text="${coches[0].kilometraje} + ' Km'"></span>
 				  		</h5>	
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-3">
+						<h5 class="card-title">
+							<i class="fas fa-charging-station" data-toggle="tooltip" title="Caballos de vapor"></i>
+							<span th:text="${coches[0].caballosVapor}+ ' CV'"></span>
+						</h5>
+					</div>
+					<div class="col-md-3">
 						<a th:href="${coches[0].enlace}" target="blank" class="btn btn-black float-right">Comprar</a>
 					</div>								  					  		
 				</div>												
@@ -227,7 +234,7 @@
 	                    <div class="pad15">
 	                        <div class="card">	
 	                        	<div class="card-header">
-								    Featured
+								    <p class="card-title" th:text="'Puntuación: '+${#numbers.formatDecimal(coche.nota, 0, 2)}+ '/3'">Nota</p>
 								  </div>				
 							  <img class="card-img-top img-thumbnail" th:onerror="this.src= '/img/none-img.png'" th:src="${coche.imagen}" alt="Imagen del coche">
 							  <div class="card-body">

@@ -6,4 +6,4 @@
     .MultiCarousel .leftLst { left:0; width: 50px; height: 50px;}
     .MultiCarousel .rightLst { right:0; width: 50px; height: 50px;}
     
-        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none; background:#ccc; }
+        .MultiCarousel .leftLst.over, .MultiCarousel .rightLst.over { pointer-events: none;  } /*background-image: url("./img/icon/direction_arrow_gold_right_disabled.png");*/

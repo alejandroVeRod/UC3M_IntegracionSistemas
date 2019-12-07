@@ -128,6 +128,8 @@ span.star{
     border-style: double;
 }
 .card-img-top{
+	min-height: 192px;
+	min-width: 272px;
 	max-width: 272px;
 	max-height: 192px;
 }

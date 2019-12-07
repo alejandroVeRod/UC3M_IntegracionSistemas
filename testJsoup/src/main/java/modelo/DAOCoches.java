@@ -1,21 +1,19 @@
 package modelo;
 
-import org.bson.Document;
-import org.bson.conversions.Bson;
-
-
-import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.and;
-import static com.mongodb.client.model.Filters.or;
-import static com.mongodb.client.model.Filters.lt;
+import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.gt;
 import static com.mongodb.client.model.Filters.gte;
-import static com.mongodb.client.model.Updates.set;
+import static com.mongodb.client.model.Filters.lt;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import modelo.MongoBroker;
+import org.bson.Document;
+import org.bson.conversions.Bson;
+
+import com.mongodb.BasicDBObject;
+import com.mongodb.DBCursor;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 
@@ -35,11 +33,12 @@ public class DAOCoches {
 	}
 	
 	public static List<Document> getAllCars() {		
-		FindIterable<Document> resultados= dbCoches.find();
+		FindIterable<Document> resultados = dbCoches.find().sort(new BasicDBObject("nota",-1));
 		listaCoches = new ArrayList<Document>();
 		for(Document doc: resultados) {
 			listaCoches.add(doc);
 		}
+		
 		return listaCoches;
 	}	
 	
