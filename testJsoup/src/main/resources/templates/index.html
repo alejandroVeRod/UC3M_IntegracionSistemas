@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="/css/gaugeChart.css"/>	
  	<link rel="stylesheet" type="text/css" href="/css/polarChart.css"/>	
 	
-	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.js"></script>	
+	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.min.js"></script>	
 	<script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	
 	<!-- CHART -->
@@ -168,13 +168,9 @@
 				<div class="row col-md-12">
 					<div class="col-md-4">
 						<img alt="Imagen del coche" th:onerror="this.src= '/img/none-img.png'" th:src="${coches[0].imagen}" class="img-thumbnail">
-						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						
+<!-- 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						 -->
 					</div>
-					<div class="col-md-3">
-						<figure class="highcharts-figure">
-						    <div id="container-speed" class="chart-container"></div>	    
-						</figure>
-						
+					<div class="col-md-1">
 						<div th:if="${coches[0].get('distintivo')!= null}">
 							<img th:if="${coches[0].distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="60em" height="60em" class="img-thumbnail">
 							<img th:if="${coches[0].distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="60em" height="60em" class="img-thumbnail">
@@ -183,13 +179,17 @@
 						</div>	
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="50%" height="50%" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
-						</div>
-						
+						</div>						
 <!-- 						<p th:text="'Puntuación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p> -->
-												
+							
 					</div>
-					<div class="col-md-5">
-						<div id="container"></div>						
+					<div class="col-md-3">
+						<figure class="highcharts-figure">
+						    <div id="container-speed" class="chart-container"></div>	    
+						</figure>											
+					</div>
+					<div class="col-md-4">
+						<div id="container0"></div>						
 					</div>
 				</div>
 				<div class="row col-md-12">						
@@ -318,6 +318,17 @@
 <script th:inline="javascript" th:src="@{/js/polarChart.js}"></script>
 <script th:inline="javascript" th:src="@{/js/carousel.js}"></script>
 <script th:inline="javascript" th:src="@{/js/maps.js}"></script>
+
+<script th:inline="javascript">
+	/*<![CDATA[*/	
+	var coche= /*[[${coches}]]*/;
+	if(coche.length > 0){
+		for (paso = 0; paso < 1; paso++) {			  
+		  drawChart('container'+paso, coche[paso].kilometraje, coche[paso].ano, coche[paso].consumo, coche[paso].precio, coche[paso].nota);			  
+		};
+	}
+	
+</script>
 
 <!-- <script type="text/javascript" th:src="@{/js/polarChart.js}"></script>	 -->
 </html>

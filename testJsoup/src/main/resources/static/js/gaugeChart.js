@@ -1,4 +1,5 @@
-$(document).ready(function() {
+$(document).ready(function() {	
+	/*<![CDATA[*/
 	var gaugeOptions = {
 		    chart: {
 		        type: 'solidgauge'
@@ -77,4 +78,5 @@ $(document).ready(function() {
 		    }]
 
 		}));
+/*]]>*/
 })

@@ -17,7 +17,7 @@ function drawChart(id, km, uso, consumo, precio, evaluacion){
 //	            x: -80
 	        },
 	        pane: {
-	            size: '80%' /*80*/
+	            size: '50%' /*80*/
 	        },
 	        xAxis: {	        	
 	            categories: ['Km', 'Uso', 'Consumo', 'Precio', 'Evaluación'],	
@@ -91,7 +91,7 @@ function drawChart(id, km, uso, consumo, precio, evaluacion){
 	                        verticalAlign: 'bottom'
 	                    },
 	                    pane: {
-	                        size: '80%'
+	                        size: '50%'
 	                    }
 	                }
 	            }]
