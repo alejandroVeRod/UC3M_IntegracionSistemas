@@ -62,7 +62,7 @@ public class ScrapperCoches {
 			org.bson.Document coche=new org.bson.Document();
 			Element elem = doc.select(filtroDetalles).first();
 			
-			tipo =elem.getElementsContainingOwnText("Tipo de vehÃ­culo").next().text();
+			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
 			precio =Float.valueOf(doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", ""));
 			kilometraje=doc.select("span.sc-font-l.cldt-stage-primary-keyfact").first().text().split(" ")[0].replace(".", "");
 			caballosVapor=doc.select("span.sc-font-m.cldt-stage-primary-keyfact").first().text().split(" ")[0];
@@ -70,8 +70,8 @@ public class ScrapperCoches {
 			localizacion=doc.select("div.cldt-stage-vendor-text.sc-font-s").first().text().split(",")[0];
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
-			anno =Integer.parseInt(elem.getElementsContainingOwnText("AÃ±o").next().text());
-			categoria=elem.getElementsContainingOwnText("CategorÃ­a").next().text();
+			anno =Integer.parseInt(elem.getElementsContainingOwnText("Año").next().text());
+			categoria=elem.getElementsContainingOwnText("Categoría").next().text();
 			
 			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
 			String c=elem.getElementsContainingOwnText("Consumo de combustible:").next().text().split(" ")[0];
@@ -99,8 +99,7 @@ public class ScrapperCoches {
 			System.out.println("Coche scrapeado "+marca+" "+modelo+" "+anno);
 
 			WrapperCoches.asignarDistintivo(coche);
-			WrapperCoches.evaluarCoche(coche);
-			
+			WrapperCoches.evaluarCoche(coche);		
 			
 			
 			System.out.println(coche);

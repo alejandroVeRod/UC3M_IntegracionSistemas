@@ -5,6 +5,7 @@ import static com.mongodb.client.model.Filters.eq;
 import static com.mongodb.client.model.Filters.gt;
 import static com.mongodb.client.model.Filters.gte;
 import static com.mongodb.client.model.Filters.lt;
+import static com.mongodb.client.model.Filters.lte;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,9 +51,14 @@ public class DAOCoches {
 		return kms;
 	}	
 	
-	public static List<Document> advance(float minPrecio,float maxPrecio,String marca, String modelo){
+	public static List<Document> advance(float minPrecio,float maxPrecio,String marca, String modelo, float kilometraje){
 		//b�squeda base (todos los coches con un precio mayor a cero u otro valor)
-		Bson filtro= and(gt("precio",minPrecio));
+		Bson km=and(gt("kilometraje", kilometraje));
+		if(kilometraje > 0) {
+			km= and(lt("kilometraje", kilometraje));
+		}
+		
+		Bson filtro= and(gt("precio",minPrecio), km);		
 		
 		if(maxPrecio > 0) {
 			//busqueda en un rango de precios
@@ -60,11 +66,11 @@ public class DAOCoches {
 			if(marca != "" ) {
 				//busqueda en un rango de precio y marca definida
 				filtro= and(gt("precio",minPrecio),lt("precio",maxPrecio),
-						  and(eq("marca",marca)));
+						  and(eq("marca",marca), km));
 				if(modelo!= "") {
 					//busqueda en un rango de precio, con marca y modelo definidos
 					filtro= and(gt("precio",minPrecio),lt("precio",maxPrecio),
-							  and(eq("marca",marca), and(eq("modelo",modelo))));
+							  and(eq("marca",marca), and(eq("modelo",modelo), km)));
 				}
 			}
 		}else {
@@ -78,9 +84,9 @@ public class DAOCoches {
 					filtro= and(gte("precio",minPrecio), and(eq("modelo",modelo)));
 				}
 			}
-		}
+		}		
 		
-		FindIterable<Document> resultados=dbCoches.find(filtro);
+		FindIterable<Document> resultados=dbCoches.find(filtro).sort(new BasicDBObject("nota",-1));
 		List<Document> coches = new ArrayList<Document>();
 		for(Document doc: resultados) {
 			coches.add(doc);
@@ -107,7 +113,8 @@ public class DAOCoches {
 	public static ArrayList<Integer> obtenerKilometrajes() {
 		ArrayList<Integer> kms = new ArrayList<Integer>();
 		for(Document doc: listaCoches) {
-			kms.add(Integer.parseInt(doc.getString("kilometraje")));
+			double d= doc.getDouble("kilometraje");
+			kms.add((int)d);
 		}	    
 	    return kms;
 	}

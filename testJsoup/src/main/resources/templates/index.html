@@ -19,6 +19,7 @@
 	<!-- Este es nuestro estilo que sobreescribe los de bootstrap para personalizar la app -->
 	<link rel="stylesheet" type="text/css" href="/css/site.css"/>	
 	<link rel="stylesheet" type="text/css" href="/css/carousel.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/gaugeChart.css"/>	
  	<link rel="stylesheet" type="text/css" href="/css/polarChart.css"/>	
 	
 	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.js"></script>	
@@ -28,6 +29,7 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-more.js"></script>
+	<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -145,19 +147,18 @@
 				</form>
 			</div>
 			
-			<div class="col-md-1" > <!-- style="background-color: rgb(223,182,90);" -->
-				<!-- <img alt="" src="../img/brand.png">  -->
-			</div>
+			<div class="col-md-1"></div>
 			
-			<div class="col-md-7 panel-gold" th:if="${coches.size()>=0}">	
+			<div class="col-md-7 panel-gold" th:if="${coches.size()>0}">	
 				<div class="row panel-header" >
 					<div class="row col-md-12 col-md-12-fix">
 						<h4 class="coche-header col-md-4" th:text="${coches[0].marca} + ' ' +  ${coches[0].modelo}"></h4>
-						<span class="star col-md-4">
-						   	<i class="fas fa-star"></i>
-						   	<i class="fas fa-star"></i>
-						   	<i class="far fa-star"></i>
-						</span>
+						<div class="col-md-4"></div>
+<!-- 						<span class="star col-md-4"> -->
+<!-- 						   	<i class="fas fa-star"></i> -->
+<!-- 						   	<i class="fas fa-star"></i> -->
+<!-- 						   	<i class="far fa-star"></i> -->
+<!-- 						</span> -->
 						<div class="col-md-4">
 							<span class="price fas fa-euro-sign float-right" style="padding-top: 1.5em;"></span>		 
 						    <h3 class="price float-right" th:text="${coches[0].precio}" style="padding-top: 0.5em;"></h3> 
@@ -170,17 +171,22 @@
 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						
 					</div>
 					<div class="col-md-3">
+						<figure class="highcharts-figure">
+						    <div id="container-speed" class="chart-container"></div>	    
+						</figure>
+						
 						<div th:if="${coches[0].get('distintivo')!= null}">
-							<img th:if="${coches[0].distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="25%" height="25%" class="img-thumbnail">
-							<img th:if="${coches[0].distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="25%" height="25%" class="img-thumbnail">
-							<img th:if="${coches[0].distintivo.equals('Eco')}" src="../img/icon/eco-emisiones.png" width="25%" height="25%" class="img-thumbnail">
-							<img th:if="${coches[0].distintivo.equals('Cero')}" src="../img/icon/cero-emisiones.png" width="25%" height="25%" class="img-thumbnail">
+							<img th:if="${coches[0].distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+							<img th:if="${coches[0].distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+							<img th:if="${coches[0].distintivo.equals('ECO')}" src="../img/icon/eco-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+							<img th:if="${coches[0].distintivo.equals('0')}" src="../img/icon/cero-emisiones.png" width="60em" height="60em" class="img-thumbnail">
 						</div>	
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="50%" height="50%" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
 						</div>
-						<p th:text="'Puntuación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p>
-						<p th:text="'Categoría: '+${coches[0].categoria}"></p>						
+						
+<!-- 						<p th:text="'Puntuación: '+${#numbers.formatDecimal(coches[0].nota, 0, 2)} + '/3'">Evaluaci&oacute;n previa:</p> -->
+												
 					</div>
 					<div class="col-md-5">
 						<div id="container"></div>						
@@ -212,6 +218,10 @@
 							<i class="fas fa-charging-station" data-toggle="tooltip" title="Caballos de vapor"></i>
 							<span th:text="${coches[0].caballosVapor}+ ' CV'"></span>
 						</h5>
+						<h5 class="card-title">
+				  			<i class="fas fa-star" data-toggle="tooltip" title="Categoría"></i>
+				  			<span th:text="${coches[0].categoria}">N/A</span>
+				  		</h5>	
 					</div>
 					<div class="col-md-3">
 						<a th:href="${coches[0].enlace}" target="blank" class="btn btn-black float-right">Comprar</a>
@@ -273,8 +283,8 @@
 						    		<div class="col-md-6" th:if="${coche.get('distintivo')!= null}">
 										<img th:if="${coche.distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="60em" height="60em" class="img-thumbnail">
 										<img th:if="${coche.distintivo.equals('C')}" src="../img/icon/c-emisiones.png" width="60em" height="60em" class="img-thumbnail">
-										<img th:if="${coche.distintivo.equals('Eco')}" src="../img/icon/eco-emisiones.png" width="60em" height="60em" class="img-thumbnail">
-										<img th:if="${coche.distintivo.equals('Cero')}" src="../img/icon/cero-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+										<img th:if="${coche.distintivo.equals('ECO')}" src="../img/icon/eco-emisiones.png" width="60em" height="60em" class="img-thumbnail">
+										<img th:if="${coche.distintivo.equals('0')}" src="../img/icon/cero-emisiones.png" width="60em" height="60em" class="img-thumbnail">
 									</div>	
 									<div class="col-md-6" th:if="${coche.get('distintivo')== null}">
 										<img src="../img/icon/sin-distintivo.png" width="60em" height="60em" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
@@ -301,7 +311,10 @@
 			</div>	
 		</div>							
 	</div>
+	
+	
 </body>
+<script th:inline="javascript" th:src="@{/js/gaugeChart.js}"></script>
 <script th:inline="javascript" th:src="@{/js/polarChart.js}"></script>
 <script th:inline="javascript" th:src="@{/js/carousel.js}"></script>
 <script th:inline="javascript" th:src="@{/js/maps.js}"></script>

@@ -36,6 +36,7 @@ public class IndexController {
 		return "index";
 	}
 	
+	/* METODO QUE RECOGE LA INFORMACION DEL FORMULARIO DE LA VISTA*/
 	@PostMapping ("/") 
 	public String foobarPost(@ModelAttribute("command")FormCommand form, Model model) {
 		List<Document> coches= null;
@@ -45,8 +46,9 @@ public class IndexController {
 						
 		String marca= (form.getMarca().equals("0"))?"": form.getMarca();
 		String modelo= (form.getModelo().equals("0"))?"": form.getModelo();
+		float km= Float.parseFloat(form.getKilometraje());
 		
-		coches=DAOCoches.advance(precioMin, precioMax, marca, modelo);		
+		coches=DAOCoches.advance(precioMin, precioMax, marca, modelo, km);		
 		
 		model.addAttribute("coches", coches);
 		model.addAttribute("command", new FormCommand());

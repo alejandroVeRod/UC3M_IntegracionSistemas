@@ -1,4 +1,6 @@
 function drawChart(id, km, uso, consumo, precio, evaluacion){
+	var fecha = new Date();
+	var anyo = fecha.getFullYear();
 	//console.log(item);
 	/*<![CDATA[*/
 		Highcharts.chart(id, {
@@ -61,19 +63,19 @@ function drawChart(id, km, uso, consumo, precio, evaluacion){
 	            pointPlacement: 'on',
 	            colorByPoint:true,
 	            data: [{
-                    name: 'Kilometraje',
-                    y: parseInt(km)
+                    name: 'Kilometraje (km)',
+                    y: parseInt(km),
                 },{
-                    name: 'Consumo',
+                    name: 'Consumo (km/L)',
                     y: parseInt(consumo)
                 },{
-                    name: 'Antiguedad',
-                    y:parseInt(uso)
+                    name: 'Antiguedad (años)',
+                    y:parseInt(anyo-uso)
                 },{
-                    name: 'Precio',
+                    name: 'Precio (euros)',
                     y:parseInt(precio)
                 },{
-                    name: 'Evaluacion',
+                    name: 'Evaluación (1-3)',
                     y: parseInt(evaluacion)
                 }]
 	        }],
