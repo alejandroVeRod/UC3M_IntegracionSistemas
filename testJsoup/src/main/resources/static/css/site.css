@@ -12,6 +12,11 @@
 	text-align: center;
 }
 
+/* FORMULARIO DE BUSQUEDA*/
+.input-group-text.bg-dark{
+	width: 8.2em;
+}
+
 /*NEWSS STYLES*/
 .bg-gold{
 	border-color: rgb(233,182,90);

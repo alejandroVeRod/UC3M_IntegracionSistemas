@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	
 	/*tamaño del mapa*/
-	var itemsMainDiv = ('#map');
+	var itemsMainDiv = ('#mapid');
 	var itemsMainView = ('#mapView');	
 	var sampwidth = $(itemsMainDiv).width();
 	$(itemsMainView).css({ 'width': sampwidth });
