@@ -28,16 +28,17 @@ public class AttTest {
 		BufferedWriter buffWriter = new BufferedWriter(fileWriter);
 		
 		buffWriter.write("@relation C__Users_oscar_git_UC3M_IntegracionSistemas_testJsoup\n");
-		for (int i = 0; i < 2; i++) {
+		/*for (int i = 0; i < 2; i++) {
 			buffWriter.write("@attribute x_"+i+" numeric\n");
-		}
-		//buffWriter.write("@attribute class numeric\n");
+		}*/
+		buffWriter.write("@attribute x_0 numeric\n");
 		buffWriter.write("@data\n");
 		
-		int cont = 1;
+		//int cont = 1;
 		for (Float float1 : datos) {
-			buffWriter.write(cont+","+float1.toString()+"\n");
-			cont++;
+			//buffWriter.write(cont+","+float1.toString()+"\n");
+			buffWriter.write(float1.toString()+"\n");
+			//cont++;
 		}
 		
 		buffWriter.close();
