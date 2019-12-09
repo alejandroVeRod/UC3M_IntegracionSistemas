@@ -19,6 +19,16 @@
 	<!-- Este es nuestro estilo que sobreescribe los de bootstrap para personalizar la app -->
 	<link rel="stylesheet" type="text/css" href="/css/site.css"/>	
  	<link rel="stylesheet" type="text/css" href="/css/polarChart.css"/>	
+ 	
+ 	
+ 	
+ 	
+ 	<!--Referencia al mapa-->
+ 	<link rel="stylesheet" href="/css/leaflet.css" />
+	<script src="/js/leaflet.js"></script>
+	
+	
+	
 	
 	<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.js"></script>	
 	<script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -209,6 +219,77 @@
 		
 		
 		
+		
+		<!--Mapa -->
+		<div id="mapid" style="width: 600px; height: 400px;"></div>
+<script th:inline="javascript">
+/*<![CDATA[*/
+	
+
+	
+	var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+
+	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11'
+	}).addTo(mymap);
+	
+	mymap.locate({setView: true, maxZoom: 18});
+    var coches=/*[[${coches}]]*/
+    
+
+    <!--https://stackoverflow.com/questions/16770659/google-maps-geocoding-api-v3-search-ok-with-wifi-but-responses-over-query-limit-->
+	var popup = L.popup()
+	    .setContent('<p><br /></p>')
+		
+	var carIcon = L.icon({
+	    iconUrl: '/img/car.jpg',
+	
+	    iconSize:     [25, 25], // size of the icon
+	    iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
+	    shadowAnchor: [4, 62],  // the same for the shadow
+	    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+	});
+    
+   	
+   	for(i=0;i<coches.length;i++){
+   		addr_search(coches[i].localizacion,coches[i])
+   	}
+   	
+   	
+   	
+function addToMarker(loc,infoCoche){
+	L.marker(loc,{icon:carIcon}).bindPopup('<a href="'+infoCoche.enlace+'"target="_blank">'+infoCoche.marca+" "+infoCoche.modelo+"'</href"+"<br></br>"
+			+"<img src="+infoCoche.imagen+" height='75px' width='100px' </img>").addTo(mymap);
+}
+function addr_search(addr,coche) {
+		 
+		 var xmlhttp = new XMLHttpRequest();
+		 var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + addr;
+		 xmlhttp.onreadystatechange = function()
+		 {
+		   if (this.readyState == 4 && this.status == 200)
+		   {
+		    var response=JSON.parse(this.responseText);
+		    var loc=[response[0].lat,response[0].lon];
+		   	addToMarker(loc,coche);
+		   }
+		 };
+		 xmlhttp.open("GET", url, true);
+		 xmlhttp.send();
+		 
+		 
+	}
+
+</script>
+		
+		
+		
+		
+		
 		<div class="row col-md-12">
 			<div class="col-md-12 panel-gold">
 				<h5 th:if="${coches.isEmpty()}" class="text-center">No hay resultados que mostrar</h5>
@@ -218,10 +299,7 @@
 			
 			
 			<div class="row">
-				<div class="col-md-6">
-					<iframe class="panel-gold" width="630" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.772945404052735%2C40.38094375470547%2C-3.641452789306641%2C40.455437831262365&amp;layer=hot&amp;marker=40.41820110334611%2C-3.7071990966796875"></iframe><br/><small>
-					<a target="blank" href="https://www.openstreetmap.org/?mlat=40.4182&amp;mlon=-3.7072#map=13/40.4182/-3.7072&amp;layers=H">Ver mapa más grande</a></small>
-				</div>
+			 
 				<div class="col-md-3" th:each="coche,iter : ${coches}" th:if="${iter.index} > 0">
 					<div class="card">					
 					  <img class="card-img-top" th:src="${coche.imagen}" alt="Imagen del coche">
@@ -238,6 +316,15 @@
 		
 							
 	</div>
+	
+	 <!-- Make sure you put this AFTER Leaflet's CSS -->
+
 </body>
+
+
+
+
+
+
 <script type="text/javascript" th:src="@{/js/polarChart.js}"></script>	
 </html>

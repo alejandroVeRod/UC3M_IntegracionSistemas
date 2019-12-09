@@ -1,16 +1,22 @@
 package valoraciones;
 
+import java.io.IOException;
+
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 public class Utils {
 	
 	/**
 	 * M�todo que da un valor al coche en el momento de la inserci�n sobre un m�ximo de 5
 	 **/
-	public static float setValorCoche (String distintivo, int ano, String kilometraje) {
+	public static float setValorCoche (String distintivo, int ano, float kilometraje) {
 		
 		float valoracion = 0;
 		
 		int annoMatriculacion =(Integer) ano;	
-		int numeroKm = Integer.parseInt(kilometraje);
+		float numeroKm = kilometraje;
 		
 		if (annoMatriculacion <= 1990) {
 			valoracion += 1;
@@ -97,5 +103,7 @@ public class Utils {
 		return valoracion/5;
 		
 	}
+	
+
 
 }

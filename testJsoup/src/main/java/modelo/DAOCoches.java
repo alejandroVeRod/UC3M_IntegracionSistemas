@@ -97,10 +97,11 @@ public class DAOCoches {
 	    return modelos;
 	}
 	
-	public static ArrayList<Integer> obtenerKilometrajes() {
-		ArrayList<Integer> kms = new ArrayList<Integer>();
+	public static ArrayList<Float> obtenerKilometrajes() {
+		ArrayList<Float> kms = new ArrayList<Float>();
 		for(Document doc: listaCoches) {
-			kms.add(Integer.parseInt(doc.getString("kilometraje")));
+			float km=Float.valueOf(((Double) doc.get("kilometraje")).floatValue());
+			kms.add(km);
 		}	    
 	    return kms;
 	}

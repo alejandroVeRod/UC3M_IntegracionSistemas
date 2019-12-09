@@ -6,22 +6,31 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.bson.Document;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.Map;
 
 import modelo.DAOCoches;
 import vista.FormCommand;
 
+
 @Controller
+@SessionAttributes("coches")
 public class IndexController {
-	
+
 	@GetMapping("/")
-	public String index(Model model) {
-		model.addAttribute("titulo", "TuMejorCoche");
+	public String index(HttpSession session,Model model,ModelAndView modelView ) {
+		((Model) model).addAttribute("titulo", "TuMejorCoche");
 		
 		//obteniendo coches
 		
@@ -29,10 +38,7 @@ public class IndexController {
 		model.addAttribute("marcas", DAOCoches.obtenerMarcasCoches());
 		model.addAttribute("modelos", DAOCoches.obtenerModelosCoches());
 		model.addAttribute("kilometros", generarKilometros());
-		
 		model.addAttribute("command", new FormCommand());
-	    model.addAttribute("precios", generarPrecios());
-		
 		return "index";
 	}
 	
@@ -54,19 +60,19 @@ public class IndexController {
 		model.addAttribute("marcas", DAOCoches.obtenerMarcasCoches());
 		model.addAttribute("modelos", DAOCoches.obtenerModelosCoches());
 		model.addAttribute("kilometros", generarKilometros());
-		
 		return "index"; 
 	}	
 	
+
 	public ArrayList<String> generarKilometros(){
 		ArrayList<String> result = new ArrayList<String>();
 		
-		ArrayList<Integer> kms= DAOCoches.obtenerKilometrajes();
-		int maximo= Collections.max(kms);
-		int minimo= Collections.min(kms);
+		ArrayList<Float> kms= DAOCoches.obtenerKilometrajes();
+		Float maximo= Collections.max(kms);
+		Float minimo= Collections.min(kms);
 
-	    for(int i=minimo; i< maximo; i+= 100) {
-	    	String value= Integer.toString(i);
+	    for(Float i=minimo; i< maximo; i+= 100) {
+	    	String value= Float.toString(i);
 	    	result.add(value);
 	    }
 	    return result;

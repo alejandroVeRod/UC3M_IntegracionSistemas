@@ -21,7 +21,7 @@ import valoraciones.Utils;
 
 public class ScrapperCoches {
 
-	private static final int MAX_PAGES=10;
+	private static final int MAX_PAGES=15;
 	
 	private static final String URL_COCHES= "https://www.autoscout24.es";
 	private static final String URL="https://www.autoscout24.es/lst?sort=standard&desc=0&ustate=N%2CU&size=20&lon=-3.700345&lat=40.416691&zip=Madrid&zipr=1000&cy=E&atype=C&ac=0";
@@ -43,8 +43,8 @@ public class ScrapperCoches {
 	
 	public  List<org.bson.Document> getListaCoches(){
 		List<org.bson.Document> listaCoches=new ArrayList<org.bson.Document>();
-		
-		String kilometraje="";
+		String km="";
+		float kilometraje=0;
 		String caballosVapor="";
 		String tipo ="";
 		String marca ="";
@@ -62,24 +62,31 @@ public class ScrapperCoches {
 			org.bson.Document coche=new org.bson.Document();
 			Element elem = doc.select(filtroDetalles).first();
 			
-			tipo =elem.getElementsContainingOwnText("Tipo de vehÃ­culo").next().text();
+			tipo =elem.getElementsContainingOwnText("Tipo de vehículo").next().text();
 			precio =Float.valueOf(doc.select(filtroPrecio).first().text().replaceAll("[^\\dA-Za-z]", ""));
-			kilometraje=doc.select("span.sc-font-l.cldt-stage-primary-keyfact").first().text().split(" ")[0].replace(".", "");
+			
+			km=doc.select("span.sc-font-l.cldt-stage-primary-keyfact").first().text().split(" ")[0].replace(".", "");
+			
+			if(km.equals("-"))
+				continue;
+			
+			kilometraje=Float.valueOf(km);
+			
+			
 			caballosVapor=doc.select("span.sc-font-m.cldt-stage-primary-keyfact").first().text().split(" ")[0];
 			imagen= doc.select("div.gallery-picture img").attr("src");
 			localizacion=doc.select("div.cldt-stage-vendor-text.sc-font-s").first().text().split(",")[0];
 			marca =elem.getElementsContainingOwnText("Marca").next().text();
 			modelo =elem.getElementsContainingOwnText("Modelo").next().text();
-			anno =Integer.parseInt(elem.getElementsContainingOwnText("AÃ±o").next().text());
-			categoria=elem.getElementsContainingOwnText("CategorÃ­a").next().text();
+			anno =Integer.parseInt(elem.getElementsContainingOwnText("Año").next().text());
+			categoria=elem.getElementsContainingOwnText("Categorí­a").next().text();
 			
 			tipoCombustible=elem.getElementsContainingOwnText("Combustible").next().first().text();
 			String c=elem.getElementsContainingOwnText("Consumo de combustible:").next().text().split(" ")[0];
 			if(c.length()>1) {
 				consumo= c.replace(",", ".");
 			}
-			if(kilometraje.equals("-"))
-				continue;
+
 
 			coche.append("enlace", URL_COCHES+enlace);
 
@@ -138,7 +145,7 @@ public class ScrapperCoches {
 				enlaces.add(url);			
 			}
 		}else {
-			System.out.println("Error, de conexiï¿½n");
+			System.out.println("Error, de conexión");
 		}
 		return enlaces;
 		
@@ -150,7 +157,7 @@ public class ScrapperCoches {
 		try {
 		    doc = Jsoup.connect(url).userAgent("Mozilla/5.0").timeout(100000).get();
 		    } catch (IOException ex) {
-			System.out.println("Excepciï¿½n al obtener el HTML de la pï¿½gina" + ex.getMessage());
+			System.out.println("Excepción al obtener el HTML de la pï¿½gina" + ex.getMessage());
 		    }
 	    return doc;
 	}
@@ -171,7 +178,7 @@ public class ScrapperCoches {
 	    try {
 		response = Jsoup.connect(url).userAgent("Mozilla/5.0").timeout(100000).ignoreHttpErrors(true).execute();
 	    } catch (IOException ex) {
-		System.out.println("Excepciï¿½n al obtener el Status Code: " + ex.getMessage());
+		System.out.println("Excepción al obtener el Status Code: " + ex.getMessage());
 	    }
 	    return response.statusCode();
 	}

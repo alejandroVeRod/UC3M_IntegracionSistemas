@@ -67,7 +67,7 @@ public class WrapperCoches {
 	}
 	public static void evaluarCoche(org.bson.Document coche) {
 		
-		float evaluacionCoche=Utils.setValorCoche(coche.getString("distintivo"), coche.getInteger("ano"), coche.getString("kilometraje"));
+		float evaluacionCoche=Utils.setValorCoche(coche.getString("distintivo"), coche.getInteger("ano"), (float) coche.get("kilometraje"));
 		System.out.println("Nota de coche"+evaluacionCoche);
 		coche.append("nota", evaluacionCoche);
 	}
