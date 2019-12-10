@@ -28,5 +28,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/oscar/Documents/JARs/timeseriesForecasting1.1.27.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
