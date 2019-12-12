@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import modelo.DAOCoches;
+import modelo.DAOCombustible;
 import vista.FormCommand;
 
 @Controller
@@ -23,12 +24,16 @@ public class IndexController {
 	public String index(Model model) {
 		model.addAttribute("titulo", "NextCar");
 		
+		float precioG= DAOCombustible.promedioPrecioEstimado("Gasolina");
+		float precioD= DAOCombustible.promedioPrecioEstimado("Diesel");
 		//obteniendo coches
 		
 		model.addAttribute("coches", DAOCoches.listaCoches);	
 		model.addAttribute("marcas", DAOCoches.obtenerMarcasCoches());
 		model.addAttribute("modelos", DAOCoches.obtenerModelosCoches());
 		model.addAttribute("kilometros", generarKilometros());
+		model.addAttribute("precioG", precioG);
+		model.addAttribute("precioD", precioD);
 		
 		model.addAttribute("command", new FormCommand());
 	    model.addAttribute("precios", generarPrecios());

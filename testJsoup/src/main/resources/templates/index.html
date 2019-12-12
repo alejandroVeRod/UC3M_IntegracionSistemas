@@ -182,7 +182,11 @@
 						</div>	
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="60em" height="60em" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
-						</div>													
+						</div>	
+						<div>																		
+							<p th:if="${coches[0].tipoCombustible}== 'Gasolina'" th:text="'Gasto por consumo: ' + ${coches[0].consumo} * ${precioG}"></p>
+							<p th:if="${coches[0].tipoCombustible}== 'Diésel'" th:text="'Gasto por consumo: ' + ${coches[0].consumo} * ${precioD}"></p>
+						</div>
 						
 <!-- 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						 -->
 					</div>
@@ -283,6 +287,12 @@
 								  		</p>	
 									</div>							  					  		
 								</div>
+								<div class="row">
+									<div class="">																	
+										<p th:if="${coche.tipoCombustible}== 'Gasolina'" th:text="'Gasto por consumo: ' + ${coche.consumo} * ${precioG}"></p>
+										<p th:if="${coche.tipoCombustible}== 'Diésel'" th:text="'Gasto por consumo: ' + ${coche.consumo} * ${precioD}"></p>						
+									</div>
+								</div>
 								<div class="row">					    	
 						    		<div class="col-md-6" th:if="${coche.get('distintivo')!= null}">
 										<img th:if="${coche.distintivo.equals('B')}" src="../img/icon/b-emisiones.png" width="60em" height="60em" class="img-thumbnail">
@@ -367,15 +377,9 @@
 				 
 				 
 			}
-		</script>
+		</script> 
 		
-<!-- 		<div class="row col-md-12" id="map" style="height: 400px; position: relative;"> -->
-			
-<!-- <!-- 			<div class=""> --> -->
-<!-- <!-- 				<iframe id="mapView" class="panel-gold" width="630" height="400" src="https://www.openstreetmap.org/export/embed.html?bbox=-3.772945404052735%2C40.38094375470547%2C-3.641452789306641%2C40.455437831262365&amp;layer=hot&amp;marker=40.41820110334611%2C-3.7071990966796875"></iframe><br/><small> --> -->
-<!-- <!-- 				<a target="blank" href="https://www.openstreetmap.org/?mlat=40.4182&amp;mlon=-3.7072#map=13/40.4182/-3.7072&amp;layers=H">Ver mapa más grande</a></small> --> -->
-<!-- <!-- 			</div>	 --> -->
-<!-- 		</div>							 -->
+
 	</div>
 	
 	

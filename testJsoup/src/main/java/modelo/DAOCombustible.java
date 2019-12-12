@@ -1,12 +1,16 @@
 package modelo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.bson.Document;
+
+import com.mongodb.client.AggregateIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
-
-import static com.mongodb.client.model.Filters.and;
-
-import java.util.ArrayList;
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.model.Aggregates;
 
 public class DAOCombustible {
 
@@ -24,7 +28,7 @@ public class DAOCombustible {
 		dbPrediccion.insertOne(precioPrediccion);
 	}
 	
-	// Al llamar a este método tenemos que pasarle como atributo el combustible que queremos extraer
+	// Al llamar a este mï¿½todo tenemos que pasarle como atributo el combustible que queremos extraer
 	// Puede ser Gasolina, o bien, Diesel
 	public static ArrayList<Float> extract(String etiqueta) {
 		ArrayList<Float> lista = new ArrayList<Float>();
@@ -36,7 +40,7 @@ public class DAOCombustible {
 		return lista;
 	}
 	
-	// Al llamar a este método tenemos que pasarle como atributo el combustible que queremos extraer
+	// Al llamar a este mï¿½todo tenemos que pasarle como atributo el combustible que queremos extraer
 	// Puede ser Gasolina, o bien, Diesel
 	public static ArrayList<Double> extractPrediccion(String etiqueta) {
 		ArrayList<Double> lista = new ArrayList<Double>();
@@ -46,5 +50,20 @@ public class DAOCombustible {
 			lista.add(Double.valueOf(d.getString("Prediccion"+etiqueta)));
 		}
 		return lista;
+	}
+	
+	public static float promedioPrecioEstimado(String combustible) {
+		float avg=0;
+		MongoCursor<Document> iter = dbCombustible.find().iterator();
+		while(iter.hasNext()) {
+			Document d = iter.next();
+			avg += Float.parseFloat(d.getString("Precio"+combustible));			
+		}
+		if(avg>0) {
+			avg= avg/12;
+			avg= (avg)*10;
+		}
+				
+		return avg;
 	}
 }
