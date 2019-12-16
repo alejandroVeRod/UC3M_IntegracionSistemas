@@ -3,10 +3,13 @@ package modelo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.lang.Math;
+import java.text.DecimalFormat;
 
 import org.bson.Document;
 
 import com.mongodb.client.AggregateIterable;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.model.Accumulators;
@@ -54,16 +57,19 @@ public class DAOCombustible {
 	
 	public static float promedioPrecioEstimado(String combustible) {
 		float avg=0;
-		MongoCursor<Document> iter = dbCombustible.find().iterator();
+		double sumaPrecio=0;
+		MongoCursor<Document> iter = dbPrediccion.find().iterator();
 		while(iter.hasNext()) {
 			Document d = iter.next();
-			avg += Float.parseFloat(d.getString("Precio"+combustible));			
+			sumaPrecio += d.getDouble("Prediccion"+combustible);			
 		}
-		if(avg>0) {
-			avg= avg/12;
-			avg= (avg)*10;
-		}
-				
+		
+		if(sumaPrecio>0) {
+			avg= (float) (sumaPrecio/12);
+		}	
+//		DecimalFormat df = new DecimalFormat("#.00");
+//		return Float.valueOf(df.format(avg));
+		
 		return avg;
 	}
 }

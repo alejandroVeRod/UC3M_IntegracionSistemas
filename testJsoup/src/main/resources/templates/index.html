@@ -183,10 +183,7 @@
 						<div th:if="${coches[0].get('distintivo')== null}">
 							<img src="../img/icon/sin-distintivo.png" width="60em" height="60em" class="img-thumbnail" data-toggle="tooltip" title="Sin distintivo">					
 						</div>	
-						<div>																		
-							<p th:if="${coches[0].tipoCombustible}== 'Gasolina'" th:text="'Gasto por consumo: ' + ${coches[0].consumo} * ${precioG}"></p>
-							<p th:if="${coches[0].tipoCombustible}== 'Diésel'" th:text="'Gasto por consumo: ' + ${coches[0].consumo} * ${precioD}"></p>
-						</div>
+						
 						
 <!-- 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						 -->
 					</div>
@@ -198,6 +195,11 @@
 					<div class="col-md-4">
 						<div id="container0"></div>						
 					</div>
+				</div>
+				<div class="row col-md-12">																		
+					<p th:if="${coches[0].tipoCombustible}== 'Gasolina'" th:text="'Gasto futuro en combustible: ' +${#numbers.formatDecimal(coches[0].consumo, 0, 1)} * ${#numbers.formatDecimal(precioG, 0, 1)}*10+' € / 1000 KM'"></p>
+					<p th:if="${coches[0].tipoCombustible}== 'Diésel'" th:text="'Gasto futuro en combustible: ' +${#numbers.formatDecimal(coches[0].consumo, 0, 1)} * ${#numbers.formatDecimal(precioD, 0, 1)} *10+' € / 1000 KM'"></p>
+					<p th:if="${coches[0].tipoCombustible}== 'híbrido'">Gasto futuro en combustible: No disponible por ser coche híbrido</p>
 				</div>
 				<div class="row col-md-12">						
 					<div class="col-md-3">
@@ -287,11 +289,20 @@
 								  		</p>	
 									</div>							  					  		
 								</div>
+								
+								
+								
+								
+								
 								<div class="row">
 									<div class="">																	
-										<p th:if="${coche.tipoCombustible}== 'Gasolina'" th:text="'Gasto por consumo: ' + ${coche.consumo} * ${precioG}"></p>
-										<p th:if="${coche.tipoCombustible}== 'Diésel'" th:text="'Gasto por consumo: ' + ${coche.consumo} * ${precioD}"></p>						
-									</div>
+										<p  th:if="${coche.tipoCombustible}== 'Gasolina'"  th:text="'Gasto futuro en combustible: ' + ${#numbers.formatDecimal(coche.consumo, 0, 1)} * ${#numbers.formatDecimal(precioG, 0, 1)}*10+' € / 1000 KM'"></p>
+										<p th:if="${coche.tipoCombustible}== 'Diésel'"  th:text="'Gasto futuro en combustible: ' + ${#numbers.formatDecimal(coche.consumo, 0, 1)} * ${#numbers.formatDecimal(precioD, 0, 1)}*10+' € / 1000 KM'"></p>
+										<p th:if="${coche.tipoCombustible}== 'híbrido'">Gasto futuro en combustible: No disponible por ser coche híbrido</p>
+									
+	
+									
+									
 								</div>
 								<div class="row">					    	
 						    		<div class="col-md-6" th:if="${coche.get('distintivo')!= null}">
@@ -318,6 +329,8 @@
 	            <img src="/img/icon/direction_arrow_gold_right.png" class="rightLst"/>
 	        </div>
 		</div>
+		
+		
 		
 		<!--Mapa -->
 		<div class="row col-md-12" id="mapid" style="height: 400px; position: relative;"></div>

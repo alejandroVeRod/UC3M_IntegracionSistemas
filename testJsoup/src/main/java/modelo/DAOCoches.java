@@ -14,8 +14,11 @@ import org.bson.Document;
 import org.bson.conversions.Bson;
 
 import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
 import com.mongodb.DBCursor;
+
 import com.mongodb.client.FindIterable;
+
 import com.mongodb.client.MongoCollection;
 
 public class DAOCoches {
@@ -95,11 +98,14 @@ public class DAOCoches {
 	}
 	
 	public static ArrayList<String> obtenerMarcasCoches() {
+		
 		ArrayList<String> marcas = new ArrayList<String>();
+		
 		for(Document doc: listaCoches) {
 			marcas.add(doc.getString("marca"));
 		}
 		return marcas;
+
 	}
 	
 	public static ArrayList<String> obtenerModelosCoches() {
