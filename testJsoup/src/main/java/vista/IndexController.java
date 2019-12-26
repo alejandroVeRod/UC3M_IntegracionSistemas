@@ -49,7 +49,7 @@ public class IndexController {
 		float precioMin= Float.parseFloat(form.getPrecioMinimo());
 		float precioMax= Float.parseFloat(form.getPrecioMaximo());
 		float precioG= DAOCombustible.promedioPrecioEstimado("Gasolina");
-		float precioD= DAOCombustible.promedioPrecioEstimado("Diesel");		
+		float precioD= DAOCombustible.promedioPrecioEstimado("Diesel");
 		String marca= (form.getMarca().equals("0"))?"": form.getMarca();
 		String modelo= (form.getModelo().equals("0"))?"": form.getModelo();
 		float km= Float.parseFloat(form.getKilometraje());
@@ -59,11 +59,12 @@ public class IndexController {
 		model.addAttribute("coches", coches);
 		model.addAttribute("command", new FormCommand());
 		model.addAttribute("precios", generarPrecios());
+		model.addAttribute("precioG", precioG);
+		model.addAttribute("precioD", precioD);
 		model.addAttribute("marcas", DAOCoches.obtenerMarcasCoches());
 		model.addAttribute("modelos", DAOCoches.obtenerModelosCoches());
 		model.addAttribute("kilometros", generarKilometros());
-		model.addAttribute("precioG", precioG);
-		model.addAttribute("precioD", precioD);
+		
 		return "index"; 
 	}	
 	
