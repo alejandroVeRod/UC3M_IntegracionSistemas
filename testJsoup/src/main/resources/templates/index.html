@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title th:text="${titulo}"></title>
+<link rel="shortcut icon" href="/img/brand.png" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+
+<link rel="stylesheet" type="text/css"
+	href="/css/fontawesome-free-5.11.2/css/regular.css" />
+<link rel="stylesheet" type="text/css"
+	href="/css/fontawesome-free-5.11.2/css/solid.css" />
+<link rel="stylesheet" type="text/css"
+	href="/css/fontawesome-free-5.11.2/css/fontawesome.css" />
+
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/4.3.1/css/bootstrap.css" />
+
+<!-- Este es nuestro estilo que sobreescribe los de bootstrap para personalizar la app -->
+<link rel="stylesheet" type="text/css" href="/css/site.css" />
+<link rel="stylesheet" type="text/css" href="/css/carousel.css" />
+<link rel="stylesheet" type="text/css" href="/css/gaugeChart.css" />
+<link rel="stylesheet" type="text/css" href="/css/polarChart.css" />
+
+<!--Referencia al mapa-->
+<link rel="stylesheet" href="/css/leaflet.css" />
+<script th:inline="javascript" th:src="@{/js/leaflet.js}"></script>
+
+<script type="text/javascript" src="/webjars/jquery/3.0.0/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- CHART -->
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/solid-gauge.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<!-- 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" /> -->
+<!--     <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>  -->
+</head>
+
+<body id="page-top">
+	<nav class="navbar navbar-expand-lg navbar-light bg-gold">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo02"
+			aria-controls="navbarTogglerDemo02" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<a class="navbar-brand" href="#">NEXTCAR</a>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row col-md-12">
+			<div class="col-md-4 panel-gold">
+				<form action="#" method="post" th:action="@{/}"
+					th:object="${command}">
+					<h4 class="text-center">
+						<span class="fa fa-search"></span> B&uacute;squeda
+					</h4>
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<label class="input-group-text bg-dark" for="inputGroupSelect01">Precio
+								M&iacute;nimo: </label>
+						</div>
+						<select class="custom-select" th:field="*{precioMinimo}">
+							<option th:value="0">Seleccione</option>
+							<option th:each="precio : ${precios}" th:value="${precio}"
+								th:text="${precio}"></option>
+						</select>
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<label class="input-group-text bg-dark" for="inputGroupSelect02">Precio
+								M&aacute;ximo:</label>
+						</div>
+						<select class="custom-select" th:field="*{precioMaximo}">
+							<option th:value="0">Seleccione</option>
+							<option th:each="precio : ${precios}" th:value="${precio}"
+								th:text="${precio}"></option>
+						</select>
+					</div>
+
+					<h4 class="text-center">
+						<span class="fa fa-search-plus"></span> Avanzada
+					</h4>
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<label class="input-group-text bg-dark text-white">Marca:</label>
+						</div>
+						<select class="custom-select" th:field="*{marca}">
+							<option th:value="0">Seleccione</option>
+							<option th:each="brand : ${marcas}" th:value="${brand}"
+								th:text="${brand}"></option>
+						</select>
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<label class="input-group-text bg-dark text-white">Modelo:</label>
+						</div>
+						<select class="custom-select" th:field="*{modelo}">
+							<option th:value="0">Seleccione</option>
+							<option th:each="model : ${modelos}" th:value="${model}"
+								th:text="${model}"></option>
+						</select>
+					</div>
+					<div class="input-group mb-2">
+						<div class="input-group-prepend">
+							<label class="input-group-text bg-dark text-white">Kilometraje:</label>
+						</div>
+						<select class="custom-select" th:field="*{kilometraje}">
+							<option th:value="0">Seleccione</option>
+							<option th:each="km : ${kilometros}" th:value="${km}"
+								th:text="${km}"></option>
+						</select>
+					</div>
+					<input type="submit" value="Buscar"
+						class="btn btn-black float-right mb-4" />
+				</form>
+			</div>
+
+			<div class="col-md-1"></div>
+
+			<div class="col-md-7 panel-gold" th:if="${coches.size()>0}">
+				<div class="row panel-header">
+					<div class="row col-md-12 col-md-12-fix">
+						<h4 class="coche-header col-md-4"
+							th:text="${coches[0].marca} + ' ' +  ${coches[0].modelo}"></h4>
+						<div class="col-md-4"></div>
+						<div class="col-md-4">
+							<span class="price fas fa-euro-sign float-right"
+								style="padding-top: 1.5em;"></span>
+							<h3 class="price float-right" th:text="${coches[0].precio}"
+								style="padding-top: 0.5em;"></h3>
+						</div>
+					</div>
+				</div>
+				<div class="row col-md-12">
+					<div class="col-md-4">
+						<img alt="Imagen del coche"
+							th:onerror="this.src= '/img/none-img.png'"
+							th:src="${coches[0].imagen}" class="img-thumbnail">
+
+						<div th:if="${coches[0].get('distintivo')!= null}">
+							<img th:if="${coches[0].distintivo.equals('B')}"
+								src="../img/icon/b-emisiones.png" width="60em" height="60em"
+								class="img-thumbnail"> 
+							<img th:if="${coches[0].distintivo.equals('C')}"
+								src="../img/icon/c-emisiones.png" width="60em" height="60em"
+								class="img-thumbnail"> 
+							<img th:if="${coches[0].distintivo.equals('ECO')}"
+								src="../img/icon/eco-emisiones.png" width="60em" height="60em"
+								class="img-thumbnail"> 
+							<img th:if="${coches[0].distintivo.equals('0')}"
+								src="../img/icon/cero-emisiones.png" width="60em" height="60em"
+								class="img-thumbnail">
+						</div>
+						<div th:if="${coches[0].get('distintivo')== null}">
+							<img src="../img/icon/sin-distintivo.png" width="60em"
+								height="60em" class="img-thumbnail" data-toggle="tooltip"
+								title="Sin distintivo">
+						</div>
+
+						<!-- 						<a th:attr="onclick=|drawChart(container,'${coches[0].kilometraje}','${coches[0].ano}','${coches[0].consumo}','${coches[0].precio}','${coches[0].nota}')|">Ver evaluaci&oacute;n</a>						 -->
+					</div>
+					<div class="col-md-4">
+						<figure class="highcharts-figure">
+							<div id="container-speed" class="chart-container"></div>
+							<script th:inline="javascript">								
+								/*<![CDATA[*/
+								var c= /*[[${coches}]]*/;
+								var auto;
+								if(c.length >0){
+									auto= c[0].nota;
+								}
+								var gaugeOptions = {
+									    chart: {
+									        type: 'solidgauge'
+									    },
+									    title: null,
+									    pane: {
+									        center: ['50%', '75%'],
+									        size: '100%',
+									        startAngle: -90,
+									        endAngle: 90,
+									        background: {
+									            backgroundColor:
+									                Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
+									            innerRadius: '60%',
+									            outerRadius: '100%',
+									            shape: 'arc'
+									        }
+									    },
+	
+									    tooltip: {
+									        enabled: false
+									    },
+	
+									    // the value axis
+									    yAxis: {
+									        stops: [
+									            [0.1, '#DF5353'], // green
+									            [0.5, '#DDDF0D'], // yellow
+									            [0.9, '#55BF3B'] // red
+									        ],
+									        lineWidth: 0,
+									        minorTickInterval: null,
+									        tickAmount: 2,
+									        title: {
+									            y: -50
+									        },
+									        labels: {
+									            y: 16
+									        }
+									    },
+									    plotOptions: {
+									        solidgauge: {
+									            dataLabels: {
+									                y: 5,
+									                borderWidth: 0,
+									                useHTML: true
+									            }
+									        }
+									    }
+									};
+	
+									// The speed gauge
+									var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+									    yAxis: {
+									        min: 0,
+									        max: 3,
+									        title: {
+									            text: 'Puntuación'
+									        }
+									    },
+	
+									    credits: {
+									        enabled: false
+									    },
+	
+									    series: [{
+									        name: 'Speed',
+									        data: [ Number(auto.toFixed(2))],
+									        dataLabels: {
+									            format:
+									                '<div style="text-align:center">' +
+									                '<span style="font-size:18px">{y}</span><br/>' +
+									                '<span style="font-size:12px;opacity:0.4"> </span>' +
+									                '</div>'
+									        },
+									    }]
+	
+									}));
+									/*]]>*/
+							</script>
+						</figure>
+					</div>
+					<div class="col-md-4">
+						<div id="container0"></div>
+					</div>
+				</div>
+				<div class="row col-md-12" th:with="var = ${coches[0]}">
+					<p th:if="${var.tipoCombustible}== 'Gasolina'"
+						th:with="variable = ${precioG * 10} "
+						th:text="'Gasto futuro en combustible: ' + ${var.consumo}*${variable}"></p>
+					<p th:if="${var.tipoCombustible}== 'Diésel'"
+						th:with="variable = ${precioD * 10} "
+						th:text="'Gasto futuro en combustible: ' + ${var.consumo} * ${variable}*10+' € / 1000 KM'"></p>
+					<p th:if="${var.tipoCombustible}== 'híbrido'">Gasto
+						futuro en combustible: No disponible por ser coche h&iacute;brido</p>
+					<p th:if="${var.tipoCombustible}!= 'híbrido' and ${var.tipoCombustible}!= 'Gasolina' and ${var.tipoCombustible}!= 'Diésel'">Gasto futuro en combustible: No disponible</p>
+				</div>
+				<div class="row col-md-12">
+					<div class="col-md-3">
+						<h5 class="card-title">
+							<i class="fas fa-calendar-week" data-toggle="tooltip" title="Año"></i>
+							<span th:text="${coches[0].ano}"></span>
+						</h5>
+						<h5 class="card-title">
+							<i class="fas fa-car" data-toggle="tooltip" title="Consumo"></i>
+							<span th:text="${coches[0].consumo} + ' L/Km'"></span>
+						</h5>
+					</div>
+					<div class="col-md-3">
+						<h5 class="card-title">
+							<i class="fas fa-gas-pump" data-toggle="tooltip"
+								title="Tipo de combustible"></i> <span
+								th:text="${coches[0].tipoCombustible}"></span>
+						</h5>
+						<h5 class="card-title">
+							<i class="fas fa-road" data-toggle="tooltip"
+								title="Kilómetros recorridos"></i> <span
+								th:text="${coches[0].kilometraje} + ' Km'"></span>
+						</h5>
+					</div>
+					<div class="col-md-3">
+						<h5 class="card-title">
+							<i class="fas fa-charging-station" data-toggle="tooltip"
+								title="Caballos de vapor"></i> <span
+								th:text="${coches[0].caballosVapor}+ ' CV'"></span>
+						</h5>
+						<h5 class="card-title">
+							<i class="fas fa-star" data-toggle="tooltip" title="Categoría"></i>
+							<span th:if="${coches[0].tipo.equals('')} == false"
+								th:text="${coches[0].tipo}">N/A</span> <span
+								th:if="${coches[0].tipo.equals('')}">N/A</span>
+						</h5>
+					</div>
+					<div class="col-md-3">
+						<a th:href="${coches[0].enlace}" target="blank"
+							class="btn btn-black float-right">Comprar</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row col-md-12">
+			<div class="col-md-12 panel-gold">
+				<h5 th:if="${coches.isEmpty()}" class="text-center">No hay resultados que mostrar</h5>
+				<h5 th:if="${coches.size()==1}" class="text-center"
+					th:text="'Se encontró '+${coches.size()} + ' resultado que mostrar'"></h5>
+				<h5 th:if="${coches.size()>1}" class="text-center"
+					th:text="'Se encontraron '+${coches.size()} + ' resultados que mostrar'"></h5>
+			</div>
+		</div>
+		<div class="row col-md-12" th:if="${coches.size()>1}">
+			<div class="MultiCarousel panel-gold" data-items="1,3,4,5,6"
+				data-slide="1" id="MultiCarousel" data-interval="1000">
+				<div class="MultiCarousel-inner">
+					<div class="item col-md-4" th:each="coche,iter : ${coches}"
+						th:if="${iter.index} > 0">
+						<div class="pad15">
+							<div class="card">
+								<div class="card-header">
+									<p class="card-title"
+										th:text="'Puntuación: '+${#numbers.formatDecimal(coche.nota, 0, 2)}+ '/3'">Nota</p>
+								</div>
+								<img class="card-img-top img-thumbnail"
+									th:onerror="this.src= '/img/none-img.png'"
+									th:src="${coche.imagen}" alt="Imagen del coche">
+								<div class="card-body">
+									<div class="row">
+										<div class="col-md-7">
+											<h5 class="card-title"
+												th:text="${coche.marca}+ ' '+${coche.modelo}">Marca</h5>
+										</div>
+										<div class="col-md-5">
+											<span class="price fas fa-euro-sign float-right"></span>
+											<h3 class="price float-right" th:text="${coche.precio}"></h3>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6">
+											<p class="card-title">
+												<i class="fas fa-calendar-week" data-toggle="tooltip"
+													title="Año"></i> <span th:text="${coche.ano}"></span>
+											</p>
+											<p class="card-title">
+												<i class="fas fa-car" data-toggle="tooltip" title="Consumo"></i>
+												<span th:text="${coche.consumo} + ' L/Km'"></span>
+											</p>
+										</div>
+										<div class="col-md-6">
+											<p class="card-title">
+												<i class="fas fa-gas-pump" data-toggle="tooltip"
+													title="Tipo de combustible"></i> <span
+													th:text="${coche.tipoCombustible}"></span>
+											</p>
+											<p class="card-title">
+												<i class="fas fa-road" data-toggle="tooltip"
+													title="Kilómetros recorridos"></i> <span
+													th:text="${coche.kilometraje} + ' Km'"></span>
+											</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="">
+											<p th:if="${coche.tipoCombustible}== 'Gasolina'"
+												th:with="variable = ${precioG * 10} "
+												th:text="'Gasto futuro en combustible: ' + ${coche.consumo}*${variable}"></p>
+											<p th:if="${coche.tipoCombustible}== 'Diésel'"
+												th:with="variable = ${precioD * 10} "
+												th:text="'Gasto futuro en combustible: ' + ${coche.consumo} * ${variable}*10+' € / 1000 KM'"></p>
+											<!-- 										<p th:if="${coche.tipoCombustible}== 'Diésel'"  th:with="variable = ${precioD * 10} "th:text="'Gasto futuro en combustible: ' + ${#numbers.formatDecimal(coche.consumo, 0, 1)} * ${#numbers.formatDecimal(precioD, 0, 1)}*10+' € / 1000 KM'"></p> -->
+											<p th:if="${coche.tipoCombustible}== 'híbrido'">Gasto futuro en combustible: No disponible por ser coche h&iacute;brido</p>
+											<p th:if="${coche.tipoCombustible}!= 'híbrido' and ${coche.tipoCombustible}!= 'Gasolina' and ${coche.tipoCombustible}!= 'Diésel'">Gasto futuro en combustible: No disponible</p>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-6"
+											th:if="${coche.get('distintivo')!= null}">
+											<img th:if="${coche.distintivo.equals('B')}"
+												src="../img/icon/b-emisiones.png" width="60em" height="60em"
+												class="img-thumbnail"> <img
+												th:if="${coche.distintivo.equals('C')}"
+												src="../img/icon/c-emisiones.png" width="60em" height="60em"
+												class="img-thumbnail"> <img
+												th:if="${coche.distintivo.equals('ECO')}"
+												src="../img/icon/eco-emisiones.png" width="60em"
+												height="60em" class="img-thumbnail"> <img
+												th:if="${coche.distintivo.equals('0')}"
+												src="../img/icon/cero-emisiones.png" width="60em"
+												height="60em" class="img-thumbnail">
+										</div>
+										<div class="col-md-6"
+											th:if="${coche.get('distintivo')== null}">
+											<img src="../img/icon/sin-distintivo.png" width="60em"
+												height="60em" class="img-thumbnail" data-toggle="tooltip"
+												title="Sin distintivo">
+										</div>
+										<div class="col-md-6">
+											<a th:href="${coche.enlace}" target="blank"
+												class="btn btn-black float-right" data-toggle="tooltip"
+												data-placement="top" title="Ver información del coche">Ver</a>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<img src="/img/icon/direction_arrow_gold_left.png" class="leftLst" />
+				<img src="/img/icon/direction_arrow_gold_right.png" class="rightLst" />
+			</div>
+		</div>
+
+
+
+		<!--Mapa -->
+		<div class="row col-md-12" id="mapid"
+			style="height: 400px; position: relative;"></div>
+		<script th:inline="javascript">
+		/*<![CDATA[*/	
+			var mymap = L.map('mapid').setView([51.505, -0.09], 15);
+			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+				maxZoom: 18,
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+					'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+					'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				id: 'mapbox/streets-v11'
+			}).addTo(mymap);
+			
+			mymap.locate({setView: true, maxZoom: 18});
+		    var coches=/*[[${coches}]]*/
+		    
+		    <!--https://stackoverflow.com/questions/16770659/google-maps-geocoding-api-v3-search-ok-with-wifi-but-responses-over-query-limit-->
+			var popup = L.popup()
+			    .setContent('<p><br /></p>')
+				
+			var carIcon = L.icon({
+			    iconUrl: '/img/car.jpg',
+			
+			    iconSize:     [25, 25], // size of the icon
+			    iconAnchor:   [25, 25], // point of the icon which will correspond to marker's location
+			    shadowAnchor: [4, 62],  // the same for the shadow
+			    popupAnchor:  [-3, -50] // point from which the popup should open relative to the iconAnchor
+			});
+		    
+		   	
+		   	for(i=0;i<coches.length;i++){
+		   		addr_search(coches[i].localizacion,coches[i])
+		   	}
+		   	
+		   	
+		   	
+		function addToMarker(loc,infoCoche){
+			L.marker(loc,{icon:carIcon}).bindPopup('<a href="'+infoCoche.enlace+'"target="_blank">'+infoCoche.marca+" "+infoCoche.modelo+"'</href"+"<br></br>"
+					+"<img src="+infoCoche.imagen+" height='75px' width='100px' </img>").addTo(mymap);
+		}
+		function addr_search(addr,coche) {
+				 
+				 var xmlhttp = new XMLHttpRequest();
+				 var url = "https://nominatim.openstreetmap.org/search?format=json&limit=3&q=" + addr;
+				 xmlhttp.onreadystatechange = function()
+				 {
+				   if (this.readyState == 4 && this.status == 200)
+				   {
+				    var response=JSON.parse(this.responseText);
+				    var loc=[response[0].lat,response[0].lon];
+				   	addToMarker(loc,coche);
+				   }
+				 };
+				 xmlhttp.open("GET", url, true);
+				 xmlhttp.send();
+				 
+				 
+			}
+		</script>
+
+	</div>
+</body>
+
+<!-- <script th:inline="javascript" th:src="@{/js/gaugeChart.js}"></script> -->
+<script th:inline="javascript" th:src="@{/js/polarChart.js}"></script>
+<script th:inline="javascript" th:src="@{/js/carousel.js}"></script>
+<script th:inline="javascript" th:src="@{/js/maps.js}"></script>
+
+<script th:inline="javascript">
+	/*<![CDATA[*/	
+	var coche= /*[[${coches}]]*/;
+	if(coche.length > 0){
+		for (paso = 0; paso < 1; paso++) {			  
+		  drawChart('container'+paso, coche[paso].kilometraje, coche[paso].ano, coche[paso].consumo, coche[paso].precio, coche[paso].nota);			  
+		};
+	}	
+</script>
+
+</html>

@@ -35,4 +35,5 @@ public class MongoBroker {
 	public static MongoCollection<Document> getCollection(String name) {
 		return database.getCollection(name);
 	}
+
 }
